@@ -75,31 +75,35 @@
   .lens p{font-size:14.5px;color:var(--ink-2)}
 
 
-  /* career overview */
-  .cv{padding:88px 0;border-top:1px solid var(--line)}
-  .cv-grid{display:grid;grid-template-columns:0.9fr 1.15fr 1.15fr;gap:56px}
-  .cv-title{font-size:clamp(48px,6vw,76px);font-weight:900;letter-spacing:-.04em;color:var(--accent);line-height:1}
-  .cv-intro{color:var(--ink-2);font-size:15px;margin-top:18px}
-  .cv h3{font-size:22px;letter-spacing:-.02em;padding-bottom:12px;border-bottom:2px solid var(--ink);margin-bottom:4px}
-  .cv-col > div + div{margin-top:40px}
-  .cv-left > div + div{margin-top:40px}
-  .cv-row{display:grid;grid-template-columns:92px 1fr;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
-  .cv-row:last-child{border-bottom:0}
-  .cv-row .d{font-size:13px;color:var(--ink-3);line-height:1.45}
-  .cv-row .t{font-size:15.5px;font-weight:600;line-height:1.45}
-  .cv-row .t small{display:block;font-size:13px;font-weight:400;color:var(--ink-2);margin-top:2px}
-  .cv-info{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
-  .cv-info:last-child{border-bottom:0}
-  .cv-info b{font-weight:700}
-  .cv-info span{color:var(--ink-2);word-break:break-all}
-  .skill{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
-  .skill:last-child{border-bottom:0}
-  .icons{display:flex;gap:10px;flex-wrap:wrap}
-  .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-      font-size:14px;font-weight:800;color:#fff;letter-spacing:-.02em;box-shadow:var(--shadow)}
-  .skill .lbl{text-align:right;font-size:13.5px;color:var(--ink-2);line-height:1.5}
-  .badge{display:inline-block;margin-top:6px;font-size:12px;font-weight:700;padding:3px 8px;border-radius:6px;color:#fff}
-  @media (max-width:960px){ .cv-grid{grid-template-columns:1fr;gap:44px} }
+  /* summary */
+  .sum{padding:88px 0;border-top:1px solid var(--line)}
+  .sum-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:40px}
+  .sum-title{font-size:clamp(46px,6vw,72px);font-weight:900;letter-spacing:-.04em;color:var(--accent);line-height:1}
+  .sum-head p{color:var(--ink-2);margin-top:14px;max-width:520px}
+  .me{display:flex;flex-direction:column;gap:8px;font-size:14.5px}
+  .me div{display:flex;gap:14px}
+  .me b{width:52px;color:var(--ink-3);font-weight:600}
+  .sum-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px}
+  .card h3{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--accent);margin-bottom:6px}
+  .row{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:0;padding-bottom:0}
+  .row .d{font-size:13.5px;color:var(--ink-3);padding-top:1px}
+  .row .t{font-size:15.5px;font-weight:600;line-height:1.45}
+  .row .t small{display:block;font-size:13.5px;font-weight:400;color:var(--ink-2);margin-top:3px}
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .sk h4{font-size:16px;margin-bottom:4px}
+  .sk p{font-size:13.5px;color:var(--ink-2);margin-bottom:20px}
+  .logos{display:flex;flex-wrap:wrap;gap:18px}
+  .logo-item{width:64px;text-align:center}
+  .logo-tile{width:64px;height:64px;border-radius:16px;background:#fff;border:1px solid #e6e8ec;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(16,24,40,.06)}
+  .logo-tile img{width:34px;height:34px}
+  .logo-tile.txt{font-size:18px;font-weight:800;letter-spacing:-.02em}
+  .logo-item span{display:block;font-size:12px;color:var(--ink-2);margin-top:8px;line-height:1.3}
+  @media (max-width:960px){ .sum-grid,.skills{grid-template-columns:1fr} }
+  @media (max-width:560px){ .row{grid-template-columns:96px 1fr;gap:12px} .card{padding:22px} }
 
   /* sections */
   section.block{padding:96px 0;border-top:1px solid var(--line)}
@@ -161,7 +165,7 @@
   .rep .actions a.dl{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 
   /* activity + edu */
-  .two{display:grid;grid-template-columns:1.25fr 1fr;gap:24px}
+  .two{display:grid;grid-template-columns:1fr;gap:24px}
   .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
   .panel h3{font-size:20px;letter-spacing:-.02em}
   .panel .date{color:var(--ink-3);font-size:14px;margin-top:2px}
@@ -219,12 +223,12 @@
     <a href="#top" class="logo">강민석의 포트폴리오</a>
     <div class="nav-right">
       <ul>
-        <li><a href="#career">Career</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#project">Project</a></li>
         <li><a href="#reports">Reports</a></li>
-        <li><a href="#activity">Activity</a></li>
-        <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="theme-btn" id="themeBtn" aria-label="테마 전환">◐</button>
     </div>
@@ -255,80 +259,60 @@
     </div>
   </section>
 
-  <!-- CAREER OVERVIEW -->
-  <section class="cv" id="career">
-    <div class="wrap cv-grid">
-      <div class="cv-left reveal">
+  <!-- SUMMARY -->
+  <section class="sum" id="summary">
+    <div class="wrap">
+      <div class="sum-head reveal">
         <div>
-          <div class="cv-title">CAREER</div>
-          <p class="cv-intro">게임사를 고객으로 만난 클라우드 영업, 제조 AI 스타트업의 사업개발, 투자 동아리의 기업 분석까지 이어 온 길입니다.</p>
+          <div class="sum-title">SUMMARY</div>
+          <p>게임사를 고객으로 만난 클라우드 영업, 제조 AI 스타트업의 사업개발, 투자 동아리의 기업 분석까지 이어 온 길입니다.</p>
         </div>
-        <div>
-          <h3>개인 정보</h3>
-          <div class="cv-info"><b>이름</b><span>강민석 (Minseok Kang)</span></div>
-          <div class="cv-info"><b>이메일</b><span>kms2086@gmail.com</span></div>
-        </div>
-        <div>
-          <h3>자격 · 어학</h3>
-          <div class="cv-row"><div class="d">2026.04</div><div class="t">AWS Certified AI Practitioner</div></div>
-          <div class="cv-row"><div class="d">2026.04</div><div class="t">AWS Certified Cloud Practitioner</div></div>
-          <div class="cv-row"><div class="d">2024.12</div><div class="t">OPIc IH</div></div>
-          <div class="cv-row"><div class="d">2024.06</div><div class="t">투자자산운용사</div></div>
+        <div class="me">
+          <div><b>이름</b><span>강민석 (Minseok Kang)</span></div>
+          <div><b>이메일</b><span>kms2086@gmail.com</span></div>
         </div>
       </div>
-
-      <div class="cv-col reveal">
-        <div>
-          <h3>학력</h3>
-          <div class="cv-row"><div class="d">2019.03<br>~ 2025.08</div><div class="t">강남대학교 경제금융전공 졸업</div></div>
+      <div class="sum-grid">
+        <div class="card reveal">
+          <h3>EXPERIENCE · 경력</h3>
+          <div class="row"><div class="d">2026.03 – 2026.07</div><div class="t">메가존클라우드 · 매니저<small>Game 2 · 게임사 대상 AWS B2B 세일즈</small></div></div>
+          <div class="row"><div class="d">2025.07 – 2025.12</div><div class="t">인터엑스 · 인턴<small>AM사업개발 · 제조 AI B2B 세일즈</small></div></div>
         </div>
-        <div>
-          <h3>경력</h3>
-          <div class="cv-row"><div class="d">2026.03<br>~ 2026.07</div><div class="t">메가존클라우드<small>EB&amp;Game 유닛 · 게임사 클라우드 영업</small></div></div>
-          <div class="cv-row"><div class="d">2025.07<br>~ 2025.12</div><div class="t">인터엑스<small>사업개발 · 제조 AI B2B 세일즈</small></div></div>
+        <div class="card reveal">
+          <h3>EDUCATION · 학력</h3>
+          <div class="row"><div class="d">2019.03 – 2025.08</div><div class="t">강남대학교 경제금융전공<small>졸업 · 학점 3.57 / 4.5</small></div></div>
         </div>
-        <div>
-          <h3>활동</h3>
-          <div class="cv-row"><div class="d">2026.07<br>~ 진행중</div><div class="t">Top-Down 거시경제 스터디<small>시황 스크랩 · 주 2회 시장 해석 토론</small></div></div>
-          <div class="cv-row"><div class="d">2024.09<br>~ 2025.12</div><div class="t">대학생연합가치투자동아리 SURI<small>기업·산업 분석 · 2025-2 학회장 · 전략부장</small></div></div>
-          <div class="cv-row"><div class="d">2025.03<br>~ 2025.06</div><div class="t">SENSE 시사토론 스터디<small>시황 점검 · 이슈 분석 · 토론</small></div></div>
-          <div class="cv-row"><div class="d">2020.03<br>~ 2022.05</div><div class="t">강남대 야구동아리 타키온즈 회장<small>사회인 리그 참여 · 정기연습 주도</small></div></div>
+        <div class="card reveal">
+          <h3>ACTIVITY · 활동</h3>
+          <div class="row"><div class="d">2024.09 – 2025.12</div><div class="t">대학생연합가치투자동아리 SURI<small>가치투자 기반 기업·산업 분석 · 90~100명 규모 동아리 운영진</small></div></div>
+          <div class="row"><div class="d">2025.03 – 2025.06</div><div class="t">SENSE 시사토론 스터디<small>시황 점검·주요 이슈 분석 및 토론 (주 4회, 기사 5건 스크랩)</small></div></div>
+          <div class="row"><div class="d">2020.03 – 2022.05</div><div class="t">강남대학교 타키온즈<small>야구동아리 회장 · 사회인 야구 리그 참여 및 정기 연습 주도</small></div></div>
+        </div>
+        <div class="card reveal">
+          <h3>CERTIFICATE · 자격 · 어학</h3>
+          <div class="row"><div class="d">2026.04</div><div class="t">AWS Certified AI Practitioner</div></div>
+          <div class="row"><div class="d">2026.04</div><div class="t">AWS Certified Cloud Practitioner</div></div>
+          <div class="row"><div class="d">2024.12</div><div class="t">OPIc IH</div></div>
+          <div class="row"><div class="d">2024.06</div><div class="t">투자자산운용사</div></div>
+          <div class="row"><div class="d">2019.06</div><div class="t">운전면허 2종 보통</div></div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="cv-col reveal">
-        <div>
-          <h3>스킬</h3>
-          <div class="skill">
-            <div class="icons">
-              <div class="ic" style="background:#d97757;font-size:11.5px">Claude</div>
-              <div class="ic" style="background:#3776ab">Py</div>
-              <div class="ic" style="background:#10a37f">GPT</div>
-            </div>
-            <div class="lbl">Claude Code, Python,<br>ChatGPT · Gemini<br><span class="badge" style="background:var(--accent)">AI · 자동화</span></div>
-          </div>
-          <div class="skill">
-            <div class="icons">
-              <div class="ic" style="background:#00a1e0">SF</div>
-              <div class="ic" style="background:#191919">N</div>
-            </div>
-            <div class="lbl">Salesforce (SFDC),<br>Notion<br><span class="badge" style="background:#16a34a">영업 · 관리</span></div>
-          </div>
-          <div class="skill">
-            <div class="icons">
-              <div class="ic" style="background:#4285f4">G</div>
-              <div class="ic" style="background:#d83b01">MS</div>
-            </div>
-            <div class="lbl">Google Workspace,<br>MS Office · 한글<br><span class="badge" style="background:#6b7280">문서 · 협업</span></div>
-          </div>
-        </div>
-        <div>
-          <h3>이런 일을 해 왔습니다</h3>
-          <div class="cv-row"><div class="d">영업</div><div class="t">게임사 어카운트 160개 관리 · 계약 6건 클로징</div></div>
-          <div class="cv-row"><div class="d">발굴</div><div class="t">콜드콜 50건+ → 사업설명회 11개사 확보</div></div>
-          <div class="cv-row"><div class="d">분석</div><div class="t">게임 산업 · 시프트업 등 기업 분석 리포트</div></div>
-          <div class="cv-row"><div class="d">도구</div><div class="t">게임사 리드 스코어링 대시보드 직접 제작</div></div>
-        </div>
+  <!-- SKILLS -->
+  <section class="block soft" id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="num">SKILLS</div><h2>업무에 쓰는 도구</h2></div>
+      <div class="skills">
+        <div class="card sk reveal"><h4>생성형 AI</h4><p>CLI·앱 기반 바이브 코딩 및 세일즈 데이터 분석</p>
+          <div class="logos"><div class="logo-item"><div class="logo-tile"><img src="assets/icons/claude.svg" alt="Claude"></div><span>Claude</span></div><div class="logo-item"><div class="logo-tile"><img src="assets/icons/openai.svg" alt="ChatGPT"></div><span>ChatGPT</span></div></div></div>
+        <div class="card sk reveal"><h4>CRM &amp; ERP</h4><p>고객·리드 관리 및 영업활동·업무 데이터 관리</p>
+          <div class="logos"><div class="logo-item"><div class="logo-tile"><img src="assets/icons/salesforce.svg" alt="Salesforce"></div><span>Salesforce</span></div><div class="logo-item"><div class="logo-tile txt" style="color:#0f4c81">SP</div><span>Salespoint</span></div><div class="logo-item"><div class="logo-tile txt" style="color:#1d6fd8">AM</div><span>Amaranth</span></div></div></div>
+        <div class="card sk reveal"><h4>협업 &amp; 생산성</h4><p>업무 일정, 프로젝트 관리 등 커뮤니케이션</p>
+          <div class="logos"><div class="logo-item"><div class="logo-tile"><img src="assets/icons/slack.svg" alt="Slack"></div><span>Slack</span></div><div class="logo-item"><div class="logo-tile"><img src="assets/icons/notion.svg" alt="Notion"></div><span>Notion</span></div><div class="logo-item"><div class="logo-tile"><img src="assets/icons/obsidian.svg" alt="Obsidian"></div><span>Obsidian</span></div></div></div>
+        <div class="card sk reveal"><h4>OA</h4><p>제안서, 발표자료 등 실무 문서 작성</p>
+          <div class="logos"><div class="logo-item"><div class="logo-tile"><img src="assets/icons/excel.svg" alt="Excel"></div><span>Excel</span></div><div class="logo-item"><div class="logo-tile"><img src="assets/icons/word.svg" alt="Word"></div><span>Word</span></div><div class="logo-item"><div class="logo-tile"><img src="assets/icons/powerpoint.svg" alt="PowerPoint"></div><span>PowerPoint</span></div><div class="logo-item"><div class="logo-tile txt" style="color:#1a73e8">한</div><span>한글</span></div><div class="logo-item"><div class="logo-tile"><img src="assets/icons/google.svg" alt="Google Workspace"></div><span>Google Workspace</span></div></div></div>
       </div>
     </div>
   </section>
@@ -482,7 +466,7 @@
   <!-- ACTIVITY + EDU -->
   <section class="block soft" id="activity">
     <div class="wrap">
-      <div class="sec-head reveal"><div class="num">04 — ACTIVITY &amp; EDUCATION</div><h2>활동 · 학력 · 자격</h2></div>
+      <div class="sec-head reveal"><div class="num">04 — ACTIVITY</div><h2>활동 상세</h2></div>
       <div class="two">
         <div class="panel reveal">
           <h3>대학생연합가치투자동아리 SURI</h3>
@@ -499,22 +483,6 @@
               <li>신입회원 기업분석 역량 육성 (신입 50명 중 MVP 배출)</li>
               <li>전략부장: MT·LT·일일호프 등 동아리 행사 기획·총괄</li></ul></div>
           </div>
-        </div>
-        <div class="panel reveal">
-          <h3>학력</h3>
-          <ul class="kv">
-            <li><span>강남대학교 경제금융전공</span><span>2019.03 – 2025.08</span></li>
-          </ul>
-          <h4 class="sub">자격증</h4>
-          <ul class="kv">
-            <li><span>AWS Certified AI Practitioner</span><span>2026.04</span></li>
-            <li><span>AWS Certified Cloud Practitioner</span><span>2026.04</span></li>
-            <li><span>투자자산운용사</span><span>2024.06</span></li>
-          </ul>
-          <h4 class="sub">어학</h4>
-          <ul class="kv">
-            <li><span>OPIc IH</span><span>2024.12</span></li>
-          </ul>
         </div>
       </div>
     </div>
