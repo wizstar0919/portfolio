@@ -47,6 +47,17 @@
   .theme-btn{border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;
      width:34px;height:34px;cursor:pointer;font-size:15px;margin-left:20px}
   .nav-right{display:flex;align-items:center}
+  .view-btn{border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;
+     height:34px;padding:0 14px;cursor:pointer;font-size:13px;font-weight:600;margin-left:20px;font-family:inherit;white-space:nowrap}
+  .view-btn:hover,.theme-btn:hover{color:var(--ink)}
+  .theme-btn{margin-left:8px !important}
+  .embed .view-btn{display:none}
+  .phone-ov{position:fixed;inset:0;z-index:120;background:rgba(8,10,14,.72);display:none;align-items:center;justify-content:center;flex-direction:column;gap:16px}
+  .phone-ov.on{display:flex}
+  .phone{width:390px;height:min(844px,82vh);border-radius:44px;border:12px solid #111;background:#fff;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .phone iframe{width:100%;height:100%;border:0;display:block}
+  .phone-close{background:#fff;color:#111;border:0;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+
 
   /* hero */
   .hero{padding:96px 0 80px;background:
@@ -79,7 +90,7 @@
 
   /* summary */
   .sum{padding:88px 0;border-top:1px solid var(--line)}
-  .sum-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:40px}
+  .sum-head{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;margin-bottom:40px}
   .sum-title{font-size:clamp(46px,6vw,72px);font-weight:900;letter-spacing:-.04em;color:var(--accent);line-height:1}
   .sum-head p{color:var(--ink-2);margin-top:14px;max-width:520px}
   .me{display:flex;flex-direction:column;gap:8px;font-size:14.5px}
@@ -164,7 +175,7 @@
   .rep .body{padding:18px;display:flex;flex-direction:column;flex:1}
   .rep .meta{font-size:12.5px;color:var(--ink-3)}
   .rep h3{font-size:17px;margin:4px 0 8px;letter-spacing:-.01em}
-  .rep p{font-size:14px;color:var(--ink-2);flex:1}
+  .rep p{font-size:14px;color:var(--ink-2);flex:1;text-wrap:balance}
   .rep .actions{display:flex;gap:8px;margin-top:16px}
   .rep .actions a{flex:1;text-align:center;font-size:13.5px;font-weight:600;padding:9px 0;border-radius:10px;border:1px solid var(--line)}
   .rep .actions a.dl{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -209,6 +220,7 @@
     .reports{grid-template-columns:repeat(2,1fr)}
     .two{grid-template-columns:1fr}
     .nav ul{display:none}
+    .view-btn{margin-left:0}
   }
   @media (max-width:560px){
     .br-d{display:none}
@@ -237,6 +249,7 @@
         <li><a href="#reports">Reports</a></li>
                 <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="view-btn" id="viewBtn" type="button">모바일로 보기</button>
       <button class="theme-btn" id="themeBtn" aria-label="테마 전환">◐</button>
     </div>
   </div>
@@ -269,7 +282,6 @@
       <div class="sum-head reveal">
         <div>
           <div class="sum-title">SUMMARY</div>
-          <p>제가 걸어온 길입니다.</p>
         </div>
         <div class="me">
           <div><b>이름</b><span>강민석 (Minseok Kang)</span></div>
@@ -438,7 +450,7 @@
   <section class="block" id="reports">
     <div class="wrap">
       <div class="sec-head reveal"><div class="num">03 — REPORTS</div><h2>기업·산업 분석 리포트</h2>
-        <p>대학생연합가치투자동아리 SURI에서 직접 작성한 리포트입니다. 표지를 누르면 크게 볼 수 있고, PDF로 내려받을 수 있습니다.</p></div>
+        <p class="wide">대학생연합가치투자동아리 SURI에서 직접 작성한 리포트입니다.<br class="br-d"> 표지를 누르면 크게 볼 수 있고, PDF로 내려받을 수 있습니다.</p></div>
       <div class="reports">
         <article class="rep reveal">
           <div class="cover" data-full="assets/img/cover-game-industry.jpg"><img src="assets/img/cover-game-industry.jpg" alt="게임 산업 리포트"></div>
@@ -504,6 +516,7 @@
 </footer>
 
 <div class="lb" id="lb"><img alt=""></div>
+<div class="phone-ov" id="phoneOv"><div class="phone"><iframe title="모바일 화면 미리보기"></iframe></div><button class="phone-close" id="phoneClose" type="button">PC로 보기</button></div>
 
 <script>
   // theme toggle (per-viewer convenience only)
@@ -517,6 +530,37 @@
       root.setAttribute('data-theme',next);
       try{localStorage.setItem(key,next);}catch(e){}
     });
+  })();
+  // PC / 모바일 보기 전환
+  (function(){
+    var params=new URLSearchParams(location.search);
+    if(params.get('embed')==='1'){document.documentElement.classList.add('embed');return;}
+    var btn=document.getElementById('viewBtn'), ov=document.getElementById('phoneOv'),
+        frame=ov.querySelector('iframe'), meta=document.querySelector('meta[name=viewport]'), key='km-view';
+    var forcedPc=false;
+    try{forcedPc=sessionStorage.getItem(key)==='pc';}catch(e){}
+    function applyPc(){meta.setAttribute('content','width=1280');}
+    if(forcedPc) applyPc();
+    function label(){ btn.textContent = (forcedPc || !matchMedia('(max-width: 760px)').matches) ? '모바일로 보기' : 'PC로 보기'; }
+    label();
+    btn.addEventListener('click',function(){
+      var narrow=matchMedia('(max-width: 760px)').matches;
+      if(forcedPc){ // 휴대폰에서 PC 화면으로 보던 중 → 원래대로
+        try{sessionStorage.removeItem(key);}catch(e){}
+        meta.setAttribute('content','width=device-width, initial-scale=1'); location.reload(); return;
+      }
+      if(narrow){ // 휴대폰 → PC 화면으로
+        try{sessionStorage.setItem(key,'pc');}catch(e){}
+        forcedPc=true; applyPc(); label(); return;
+      }
+      // PC → 휴대폰 크기 미리보기
+      if(!frame.src) frame.src=location.pathname+'?embed=1';
+      ov.classList.add('on'); document.body.style.overflow='hidden';
+    });
+    function close(){ov.classList.remove('on');document.body.style.overflow='';}
+    document.getElementById('phoneClose').addEventListener('click',close);
+    ov.addEventListener('click',function(e){if(e.target===ov)close();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
   })();
   // lightbox
   (function(){
