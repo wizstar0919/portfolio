@@ -51,12 +51,6 @@
      height:34px;padding:0 14px;cursor:pointer;font-size:13px;font-weight:600;margin-left:20px;font-family:inherit;white-space:nowrap}
   .view-btn:hover,.theme-btn:hover{color:var(--ink)}
   .theme-btn{margin-left:8px !important}
-  .embed .view-btn{display:none}
-  .phone-ov{position:fixed;inset:0;z-index:120;background:rgba(8,10,14,.72);display:none;align-items:center;justify-content:center;flex-direction:column;gap:16px}
-  .phone-ov.on{display:flex}
-  .phone{width:390px;height:min(844px,82vh);border-radius:44px;border:12px solid #111;background:#fff;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
-  .phone iframe{width:100%;height:100%;border:0;display:block}
-  .phone-close{background:#fff;color:#111;border:0;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
 
 
   /* hero */
@@ -232,6 +226,37 @@
     .proj-gallery{padding:24px}
     .reports{grid-template-columns:1fr}
   }
+
+  /* 모바일로 보기 (PC에서 강제 모바일 레이아웃) */
+  html.m{background:var(--bg-soft)}
+  html.m body{max-width:430px;margin:0 auto;box-shadow:0 0 0 1px var(--line),0 20px 60px rgba(16,24,40,.12);min-height:100vh}
+  html.m .sum-grid,html.m .skills{grid-template-columns:1fr}
+  html.m .row{grid-template-columns:96px 1fr;gap:12px}
+  html.m .card{padding:22px}
+  html.m .hero .wrap{grid-template-columns:1fr;gap:40px}
+  html.m .photo{max-width:240px;order:-1}
+  html.m .lenses{grid-template-columns:1fr}
+  html.m .xp{grid-template-columns:1fr;gap:18px}
+  html.m .proj-top{grid-template-columns:1fr}
+  html.m .proj-hero{border-left:0;border-top:1px solid var(--line)}
+  html.m .proj-gallery{grid-template-columns:1fr}
+  html.m .flow{grid-template-columns:repeat(2,1fr)}
+  html.m .reports{grid-template-columns:repeat(2,1fr)}
+  html.m .two{grid-template-columns:1fr}
+  html.m .nav ul{display:none}
+  html.m .view-btn{margin-left:0}
+  html.m .br-d{display:none}
+  html.m .wrap{padding:0 16px}
+  html.m .hero{padding:56px 0 56px}
+  html.m section.block{padding:64px 0}
+  html.m .highlights,html.m .groups{grid-template-columns:1fr}
+  html.m .proj-info{padding:26px}
+  html.m .proj-gallery{padding:24px}
+  html.m .reports{grid-template-columns:1fr}
+  html.m .hero h1{font-size:34px}
+  html.m .sec-head h2{font-size:26px}
+  html.m .sum-title{font-size:46px}
+  html.m .hero-name{font-size:28px}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -516,7 +541,6 @@
 </footer>
 
 <div class="lb" id="lb"><img alt=""></div>
-<div class="phone-ov" id="phoneOv"><div class="phone"><iframe title="모바일 화면 미리보기"></iframe></div><button class="phone-close" id="phoneClose" type="button">PC로 보기</button></div>
 
 <script>
   // theme toggle (per-viewer convenience only)
@@ -533,34 +557,30 @@
   })();
   // PC / 모바일 보기 전환
   (function(){
-    var params=new URLSearchParams(location.search);
-    if(params.get('embed')==='1'){document.documentElement.classList.add('embed');return;}
-    var btn=document.getElementById('viewBtn'), ov=document.getElementById('phoneOv'),
-        frame=ov.querySelector('iframe'), meta=document.querySelector('meta[name=viewport]'), key='km-view';
-    var forcedPc=false;
-    try{forcedPc=sessionStorage.getItem(key)==='pc';}catch(e){}
-    function applyPc(){meta.setAttribute('content','width=1280');}
-    if(forcedPc) applyPc();
-    function label(){ btn.textContent = (forcedPc || !matchMedia('(max-width: 760px)').matches) ? '모바일로 보기' : 'PC로 보기'; }
+    var root=document.documentElement, btn=document.getElementById('viewBtn'),
+        meta=document.querySelector('meta[name=viewport]'), key='km-view',
+        narrow=function(){return matchMedia('(max-width: 760px)').matches;}, mode='';
+    try{mode=sessionStorage.getItem(key)||'';}catch(e){}
+    function save(v){try{v?sessionStorage.setItem(key,v):sessionStorage.removeItem(key);}catch(e){}}
+    if(mode==='pc') meta.setAttribute('content','width=1280');
+    if(mode==='m') root.classList.add('m');
+    function label(){
+      var showingMobile = root.classList.contains('m') || (narrow() && mode!=='pc');
+      btn.textContent = showingMobile ? 'PC로 보기' : '모바일로 보기';
+    }
     label();
     btn.addEventListener('click',function(){
-      var narrow=matchMedia('(max-width: 760px)').matches;
-      if(forcedPc){ // 휴대폰에서 PC 화면으로 보던 중 → 원래대로
-        try{sessionStorage.removeItem(key);}catch(e){}
-        meta.setAttribute('content','width=device-width, initial-scale=1'); location.reload(); return;
+      if(mode==='pc'){ // 휴대폰에서 PC 배치로 보던 중 → 원래 모바일로
+        save(''); meta.setAttribute('content','width=device-width, initial-scale=1'); location.reload(); return;
       }
-      if(narrow){ // 휴대폰 → PC 화면으로
-        try{sessionStorage.setItem(key,'pc');}catch(e){}
-        forcedPc=true; applyPc(); label(); return;
+      if(mode==='m'){ // PC에서 모바일 배치로 보던 중 → PC로
+        mode=''; save(''); root.classList.remove('m'); label(); scrollTo(0,0); return;
       }
-      // PC → 휴대폰 크기 미리보기
-      if(!frame.src) frame.src=location.pathname+'?embed=1';
-      ov.classList.add('on'); document.body.style.overflow='hidden';
+      if(narrow()){ // 휴대폰 → PC 배치
+        mode='pc'; save('pc'); meta.setAttribute('content','width=1280'); label(); return;
+      }
+      mode='m'; save('m'); root.classList.add('m'); label(); scrollTo(0,0); // PC → 모바일 배치
     });
-    function close(){ov.classList.remove('on');document.body.style.overflow='';}
-    document.getElementById('phoneClose').addEventListener('click',close);
-    ov.addEventListener('click',function(e){if(e.target===ov)close();});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
   })();
   // lightbox
   (function(){
