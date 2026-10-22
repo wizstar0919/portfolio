@@ -114,6 +114,7 @@
   .sec-head .num{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.08em}
   .sec-head h2{font-size:clamp(26px,3.4vw,34px);letter-spacing:-.025em;margin-top:6px}
   .sec-head p{color:var(--ink-2);margin-top:8px;max-width:640px}
+  .sec-head p.wide{max-width:none}
 
   /* experience */
   .xp{display:grid;grid-template-columns:240px 1fr;gap:40px;padding:36px 0;border-bottom:1px solid var(--line)}
@@ -137,7 +138,9 @@
   .tag{font-size:12.5px;font-weight:600;padding:5px 10px;border-radius:999px;background:var(--bg-soft);color:var(--ink-2);border:1px solid var(--line)}
   .proj-info h3{font-size:28px;letter-spacing:-.025em}
   .proj-info .sub{color:var(--ink-2);margin-top:6px}
-  .proj-info dl{margin-top:26px;display:grid;gap:18px}
+  .proj-info dl{margin-top:26px}
+  .proj-info dd{margin-bottom:18px;text-wrap:pretty}
+  .proj-info dd:last-child{margin-bottom:0}
   .proj-info dt{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:4px}
   .proj-info dd{font-size:15px;color:var(--ink-2)}
   .proj-hero{background:var(--bg-soft);padding:32px;display:flex;align-items:center;border-left:1px solid var(--line)}
@@ -145,7 +148,7 @@
   .shot img{width:100%}
   .proj-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:32px 40px 40px;border-top:1px solid var(--line)}
   .proj-gallery figcaption{font-size:13.5px;color:var(--ink-2);margin-top:10px}
-  .proj-gallery figcaption b{color:var(--ink)}
+  .proj-gallery figcaption b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:2px}
   .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
   .step{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--bg)}
   .step span{font-size:12px;font-weight:700;color:var(--ink-3)}
@@ -395,7 +398,7 @@
   <section class="block soft" id="project">
     <div class="wrap">
       <div class="sec-head reveal"><div class="num">02 — PROJECT</div><h2>게임사 리드 스코어링 대시보드</h2>
-        <p>흩어진 게임사 소식과 기업 데이터를 한곳에 모아, 어떤 회사에 언제 연락할지 정하는 도구를 직접 기획하고 만들었습니다.</p></div>
+        <p class="wide">흩어진 게임사 소식과 기업 데이터를 한곳에 모아,<br class="br-d"> 어떤 회사에 언제 연락할지 정하는 도구를 직접 기획하고 만들었습니다.</p></div>
 
       <div class="proj reveal">
         <div class="proj-top">
@@ -404,9 +407,9 @@
             <h3>Game Pulse</h3>
             <div class="sub">게임 뉴스 · 산업 신호 크롤러 + 리드 스코어링</div>
             <dl>
-              <dt>문제</dt><dd>게임사 소식은 여러 매체에 흩어져 있고, 기업 규모만으로는 실제 인프라 수요를 가늠하기 어려웠습니다.</dd>
-              <dt>해결</dt><dd>국내외 18개 매체의 기사를 모아 신규 개발·글로벌 진출 같은 신호를 키워드로 분류하고, DART와 국민연금 API로 매출과 인력 변화를 붙여 게임사 465곳을 0~100점으로 평가했습니다.</dd>
-              <dt>역할</dt><dd>기획, 신호 정의, 점수 기준 설계, 결과 검증을 직접 맡았고, 구현은 클로드 코드를 CLI 환경에서 활용했습니다.</dd>
+              <dt>문제</dt><dd>게임사 소식은 여러 매체에 흩어져 있고,<br class="br-d"> 기업 규모만으로는 실제 인프라 수요를 가늠하기 어려웠습니다.</dd>
+              <dt>해결</dt><dd>국내외 18개 매체의 기사를 모아<br class="br-d"> 신규 개발·글로벌 진출 같은 신호를 키워드로 분류하고,<br class="br-d"> DART와 국민연금 API로 매출과 인력 변화를 붙여<br class="br-d"> 게임사 465곳을 0~100점으로 평가했습니다.</dd>
+              <dt>역할</dt><dd>기획, 신호 정의, 점수 기준 설계, 결과 검증을 직접 맡았고,<br class="br-d"> 구현은 클로드 코드를 CLI 환경에서 활용했습니다.</dd>
             </dl>
           </div>
           <div class="proj-hero"><div class="shot" data-full="assets/img/crawler-dir.jpg"><img src="assets/img/crawler-dir.jpg" alt="게임사 디렉토리 화면"></div></div>
@@ -421,11 +424,11 @@
         </div>
         <div class="proj-gallery">
           <figure><div class="shot" data-full="assets/img/crawler-dir.jpg"><img src="assets/img/crawler-dir.jpg" alt="디렉토리"></div>
-            <figcaption><b>게임사 디렉토리</b> — 465곳을 점수순으로 정렬하고 핫·관심·일반으로 분류</figcaption></figure>
+            <figcaption><b>게임사 디렉토리</b>465곳을 점수순으로 정렬하고<br>핫·관심·일반으로 분류</figcaption></figure>
           <figure><div class="shot" data-full="assets/img/crawler-signal.jpg"><img src="assets/img/crawler-signal.jpg" alt="신호 필터"></div>
-            <figcaption><b>신호 필터</b> — 글로벌 진출 등 수요 신호가 있는 기사만 모아 보기</figcaption></figure>
+            <figcaption><b>신호 필터</b>글로벌 진출 등 수요 신호가 있는<br>기사만 모아 보기</figcaption></figure>
           <figure><div class="shot" data-full="assets/img/crawler-jobs.jpg"><img src="assets/img/crawler-jobs.jpg" alt="채용 신호"></div>
-            <figcaption><b>채용 신호</b> — 게임사 서버·인프라 채용 공고를 회사 단위로 집계</figcaption></figure>
+            <figcaption><b>채용 신호</b>게임사 서버·인프라 채용 공고를<br>회사 단위로 집계</figcaption></figure>
         </div>
       </div>
     </div>
