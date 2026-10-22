@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>강민석 | Portfolio</title>
+<meta name="description" content="게임 산업을 유저·투자자·영업의 시선으로 읽는 강민석의 포트폴리오">
+<meta property="og:title" content="강민석 | Portfolio">
+<meta property="og:description" content="게임 산업을 유저·투자자·영업의 시선으로 읽습니다.">
+<meta property="og:image" content="assets/img/crawler-dir.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --bg:#ffffff; --bg-soft:#f6f7f9; --ink:#111418; --ink-2:#4a5160; --ink-3:#8a91a0;
+    --line:#e6e8ec; --accent:#2f5bea; --accent-soft:#eef2fe; --card:#ffffff;
+    --shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px rgba(16,24,40,.06);
+    --radius:16px; --max:1120px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e1116; --bg-soft:#151a21; --ink:#eef1f5; --ink-2:#b4bccb; --ink-3:#7f889a;
+      --line:#252c36; --accent:#7c9cff; --accent-soft:#1b2440; --card:#141920;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1116; --bg-soft:#151a21; --ink:#eef1f5; --ink-2:#b4bccb; --ink-3:#7f889a;
+    --line:#252c36; --accent:#7c9cff; --accent-soft:#1b2440; --card:#141920;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  body{font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+       background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 85%,transparent);
+     backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-weight:800;letter-spacing:-.02em;font-size:18px}
+  .logo span{color:var(--accent)}
+  .nav ul{display:flex;gap:28px;list-style:none;font-size:14.5px;color:var(--ink-2)}
+  .nav ul a:hover{color:var(--ink)}
+  .theme-btn{border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;
+     width:34px;height:34px;cursor:pointer;font-size:15px;margin-left:20px}
+  .nav-right{display:flex;align-items:center}
+
+  /* hero */
+  .hero{padding:96px 0 80px;background:
+     radial-gradient(900px 400px at 85% -10%,var(--accent-soft),transparent 70%)}
+  .hero .wrap{display:grid;grid-template-columns:1fr 280px;gap:64px;align-items:center}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);
+     padding:6px 12px;border-radius:999px;margin-bottom:22px}
+  .hero h1{font-size:clamp(34px,5vw,54px);line-height:1.2;letter-spacing:-.03em;font-weight:800}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p.lead{margin-top:22px;font-size:18px;color:var(--ink-2);max-width:560px}
+  .hero-meta{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;padding:12px 20px;border-radius:12px;
+     border:1px solid var(--line);background:var(--card);transition:.15s}
+  .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+  .btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .photo{position:relative}
+  .photo img{border-radius:24px;aspect-ratio:3/4;object-fit:cover;width:100%;box-shadow:var(--shadow);background:#fff}
+  .photo::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--accent);border-radius:24px;z-index:-1;opacity:.35}
+
+  /* lenses */
+  .hero .wrap.lens-wrap{display:block}
+  .lenses{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+  .lens{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .lens b{display:block;font-size:13px;color:var(--accent);margin-bottom:6px;letter-spacing:.02em}
+  .lens h3{font-size:17px;margin-bottom:6px}
+  .lens p{font-size:14.5px;color:var(--ink-2)}
+
+  /* sections */
+  section.block{padding:96px 0;border-top:1px solid var(--line)}
+  section.block.soft{background:var(--bg-soft)}
+  .sec-head{margin-bottom:44px}
+  .sec-head .num{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.08em}
+  .sec-head h2{font-size:clamp(26px,3.4vw,34px);letter-spacing:-.025em;margin-top:6px}
+  .sec-head p{color:var(--ink-2);margin-top:8px;max-width:640px}
+
+  /* experience */
+  .xp{display:grid;grid-template-columns:240px 1fr;gap:40px;padding:36px 0;border-bottom:1px solid var(--line)}
+  .xp:last-child{border-bottom:0}
+  .xp-side .co{font-size:21px;font-weight:800;letter-spacing:-.02em}
+  .xp-side .role{color:var(--ink-2);font-size:14.5px;margin-top:4px}
+  .xp-side .date{color:var(--ink-3);font-size:14px;margin-top:10px}
+  .highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:22px}
+  .hl{background:var(--accent-soft);border-radius:12px;padding:14px 16px;font-size:14.5px;font-weight:600;color:var(--ink)}
+  .groups{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 32px}
+  .group h4{font-size:14px;color:var(--ink);margin-bottom:8px;font-weight:700}
+  .group ul{list-style:none}
+  .group li{position:relative;padding-left:14px;font-size:14.5px;color:var(--ink-2);margin:4px 0}
+  .group li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--ink-3)}
+
+  /* project */
+  .proj{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+  .proj-top{display:grid;grid-template-columns:1.1fr 1fr;gap:0}
+  .proj-info{padding:40px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .tag{font-size:12.5px;font-weight:600;padding:5px 10px;border-radius:999px;background:var(--bg-soft);color:var(--ink-2);border:1px solid var(--line)}
+  .proj-info h3{font-size:28px;letter-spacing:-.025em}
+  .proj-info .sub{color:var(--ink-2);margin-top:6px}
+  .proj-info dl{margin-top:26px;display:grid;gap:18px}
+  .proj-info dt{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:4px}
+  .proj-info dd{font-size:15px;color:var(--ink-2)}
+  .proj-hero{background:var(--bg-soft);padding:32px;display:flex;align-items:center;border-left:1px solid var(--line)}
+  .shot{border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);cursor:zoom-in;background:#fff}
+  .shot img{width:100%}
+  .proj-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:32px 40px 40px;border-top:1px solid var(--line)}
+  .proj-gallery figcaption{font-size:13.5px;color:var(--ink-2);margin-top:10px}
+  .proj-gallery figcaption b{color:var(--ink)}
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+  .step{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--bg)}
+  .step span{font-size:12px;font-weight:700;color:var(--ink-3)}
+  .step p{font-size:14px;font-weight:600;margin-top:4px;line-height:1.45}
+
+  /* reports */
+  .reports{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .rep{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.18s}
+  .rep:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .rep .cover{aspect-ratio:3/4;background:var(--bg-soft);overflow:hidden;border-bottom:1px solid var(--line);cursor:zoom-in}
+  .rep .cover img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .rep .cover.wide img{object-fit:contain;object-position:center;background:#333d51}
+  .rep .body{padding:18px;display:flex;flex-direction:column;flex:1}
+  .rep .meta{font-size:12.5px;color:var(--ink-3)}
+  .rep h3{font-size:17px;margin:4px 0 8px;letter-spacing:-.01em}
+  .rep p{font-size:14px;color:var(--ink-2);flex:1}
+  .rep .actions{display:flex;gap:8px;margin-top:16px}
+  .rep .actions a{flex:1;text-align:center;font-size:13.5px;font-weight:600;padding:9px 0;border-radius:10px;border:1px solid var(--line)}
+  .rep .actions a.dl{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+  /* activity + edu */
+  .two{display:grid;grid-template-columns:1.25fr 1fr;gap:24px}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+  .panel h3{font-size:20px;letter-spacing:-.02em}
+  .panel .date{color:var(--ink-3);font-size:14px;margin-top:2px}
+  .panel .groups{grid-template-columns:1fr;margin-top:20px}
+  .kv{list-style:none;margin-top:16px}
+  .kv li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+  .kv li:last-child{border-bottom:0}
+  .kv li span:last-child{color:var(--ink-3);white-space:nowrap}
+  .panel h4.sub{font-size:14px;color:var(--accent);margin-top:26px}
+
+  /* contact */
+  footer{padding:88px 0 56px;border-top:1px solid var(--line);text-align:center}
+  footer h2{font-size:clamp(26px,3.4vw,36px);letter-spacing:-.025em}
+  footer p{color:var(--ink-2);margin-top:10px}
+  footer .btn{margin-top:26px}
+  footer small{display:block;margin-top:48px;color:var(--ink-3);font-size:13px}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;background:rgba(8,10,14,.86);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;cursor:zoom-out}
+  .lb.on{display:flex}
+  .lb img{max-width:min(1400px,100%);max-height:92vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:960px){
+    .hero .wrap{grid-template-columns:1fr;gap:40px}
+    .photo{max-width:240px;order:-1}
+    .lenses{grid-template-columns:1fr}
+    .xp{grid-template-columns:1fr;gap:18px}
+    .proj-top{grid-template-columns:1fr}
+    .proj-hero{border-left:0;border-top:1px solid var(--line)}
+    .proj-gallery{grid-template-columns:1fr}
+    .flow{grid-template-columns:repeat(2,1fr)}
+    .reports{grid-template-columns:repeat(2,1fr)}
+    .two{grid-template-columns:1fr}
+    .nav ul{display:none}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 16px}
+    .hero{padding:56px 0 56px}
+    section.block{padding:64px 0}
+    .highlights,.groups{grid-template-columns:1fr}
+    .proj-info{padding:26px}
+    .proj-gallery{padding:24px}
+    .reports{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="logo">Kang Minseok<span>.</span></a>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#activity">Activity</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-btn" id="themeBtn" aria-label="테마 전환">◐</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Business Development · Game Industry</span>
+        <h1>게임 산업을<br><em>유저·투자자·영업</em>의<br>시선으로 읽습니다</h1>
+        <p class="lead">게임사를 고객으로 만나 클라우드를 영업했고, 투자 동아리에서 게임사의 사업 구조를 분석했습니다. 데이터로 기회를 찾고, 상대의 필요에 맞춰 협력을 만듭니다.</p>
+        <div class="hero-meta">
+          <a class="btn primary" href="mailto:kms2086@gmail.com">✉ kms2086@gmail.com</a>
+          <a class="btn" href="#reports">분석 리포트 보기 →</a>
+        </div>
+      </div>
+      <div class="photo"><img src="assets/img/profile.jpg" alt="강민석 프로필 사진"></div>
+    </div>
+    <div class="wrap lens-wrap">
+      <div class="lenses">
+        <div class="lens reveal"><b>PLAYER</b><h3>무엇이 사랑받는가</h3><p>장르를 가리지 않고 게임을 즐기며, 방송과 커뮤니티로 유저가 어떤 콘텐츠에 반응하는지 지켜봅니다.</p></div>
+        <div class="lens reveal"><b>INVESTOR</b><h3>무엇이 오래 버는가</h3><p>게임 섹터와 시프트업을 분석하며 IP 의존도, 라이브 운영, 신작, 콜라보가 매출을 만드는 구조를 봤습니다.</p></div>
+        <div class="lens reveal"><b>SALES</b><h3>무엇을 실현할 수 있는가</h3><p>게임사를 고객으로 만나 과금 구조를 분석하고, 니즈에 맞춘 제안을 계약으로 연결했습니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="num">01 — EXPERIENCE</div><h2>경력</h2></div>
+
+      <article class="xp reveal">
+        <div class="xp-side">
+          <div class="co">메가존클라우드</div>
+          <div class="role">EB&amp;Game 유닛 · 매니저(AM)</div>
+          <div class="date">2026.03 – 2026.07</div>
+        </div>
+        <div>
+          <div class="highlights">
+            <div class="hl">게임사 어카운트 160개 관리 · 활성 과금고객 60개 담당</div>
+            <div class="hl">계약 6건 클로징 · 업셀 약 2,400만 원</div>
+            <div class="hl">게임사 120여 곳 리스트업 · 아웃바운드 리드 발굴</div>
+            <div class="hl">AWS 자격증 2종 취득 (CCP · AIF)</div>
+          </div>
+          <div class="groups">
+            <div class="group"><h4>어카운트 관리 및 계약</h4><ul>
+              <li>신규·갱신 계약 6건 클로징 (제안부터 날인·정산까지 전 과정 수행)</li>
+              <li>고객사 과금 구조 분석 기반 비용 최적화 상품 제안</li>
+              <li>보안사고 발생 시 고객 커뮤니케이션 및 대응 주도, 미수채권 회수 등 사후 관리</li></ul></div>
+            <div class="group"><h4>신규 고객 발굴</h4><ul>
+              <li>게임사 120여 곳 아웃바운드 컨택, 고객별 니즈·현황 기록으로 후속 관리</li>
+              <li>인디게임 행사 참여를 통한 신규 리드 확보 및 CRM(SFDC) 관리</li></ul></div>
+            <div class="group"><h4>사업·행사 운영</h4><ul>
+              <li>정부 지원사업(게임더하기) 운영: 디렉토리북 제작, 실무 진행</li>
+              <li>부산 게임 행사(BIC) 스폰서십 및 행사 준비, 참가사 DB 구축</li>
+              <li>게임사 대상 제안서 및 서비스 브로셔 제작</li></ul></div>
+            <div class="group"><h4>업무 효율화</h4><ul>
+              <li>계약 프로세스 문서화·병목 분석, 자동화 방안을 팀 워크숍에서 발표</li>
+              <li>계약·일정 관리용 세일즈 플래너 직접 제작</li>
+              <li>"클라우드 &amp; AI 개론" 사내 발표</li></ul></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="xp reveal">
+        <div class="xp-side">
+          <div class="co">인터엑스</div>
+          <div class="role">사업개발 · 인턴매니저</div>
+          <div class="date">2025.07 – 2025.12</div>
+        </div>
+        <div>
+          <div class="highlights">
+            <div class="hl">제조AI 솔루션 공모전 운영 실무 총괄</div>
+            <div class="hl">고객·파트너 미팅 30건+ 동행 · 사업 연계 5건</div>
+            <div class="hl">콜드콜 50건+ → 사업설명회 참여 11개사 확보</div>
+            <div class="hl">인바운드 20건+ → 세일즈 기회 3건 전환</div>
+          </div>
+          <div class="groups">
+            <div class="group"><h4>세일즈 캠페인 지원</h4><ul>
+              <li>1차 100개 기업 → 2차 20개 기업 → 최종심사까지 공모전 전 과정 운영</li>
+              <li>평가 기준 정리, 자료 취합·검토, 담당자 커뮤니케이션, 일정 관리</li></ul></div>
+            <div class="group"><h4>시장 조사 및 기회 발굴</h4><ul>
+              <li>미팅 요구사항·Pain Point 정리 및 회의록 작성, 내부 공유</li>
+              <li>리드 전환, 발표자료 제작, 계약서 날인·송부 등 실무</li></ul></div>
+            <div class="group"><h4>마케팅 협업</h4><ul>
+              <li>전시회 부스 운영 및 방문객 대상 솔루션 설명</li>
+              <li>강원후평 AX Meet-Up 운영, 부스·자료 준비 및 현장 운영</li></ul></div>
+            <div class="group"><h4>영업 업무 효율화</h4><ul>
+              <li>스마트팩토리 수준 자가진단 챗봇 제작 및 고객사 배포</li>
+              <li>Python 크롤링 기반 잠재 고객·파트너 리드 DB 구축</li>
+              <li>고객사 방문 체크리스트 템플릿화 및 팀 내 실사용</li>
+              <li>코오롱베니트 Nutanix 플랫폼과의 AI 협업 검토용 솔루션 소개 발표</li></ul></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROJECT -->
+  <section class="block soft" id="project">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="num">02 — PROJECT</div><h2>게임사 리드 스코어링 대시보드</h2>
+        <p>흩어진 게임사 소식과 기업 데이터를 한곳에 모아, 어떤 회사에 언제 연락할지 정하는 도구를 직접 기획하고 만들었습니다.</p></div>
+
+      <div class="proj reveal">
+        <div class="proj-top">
+          <div class="proj-info">
+            <div class="tag-row"><span class="tag">Python · Flask</span><span class="tag">DART Open API</span><span class="tag">국민연금 API</span><span class="tag">클로드 코드 (CLI)</span></div>
+            <h3>Game Pulse</h3>
+            <div class="sub">게임 뉴스 · 산업 신호 크롤러 + 리드 스코어링</div>
+            <dl>
+              <dt>문제</dt><dd>게임사 소식은 여러 매체에 흩어져 있고, 기업 규모만으로는 실제 인프라 수요를 가늠하기 어려웠습니다.</dd>
+              <dt>해결</dt><dd>국내외 18개 매체의 기사를 모아 신규 개발·글로벌 진출 같은 신호를 키워드로 분류하고, DART와 국민연금 API로 매출과 인력 변화를 붙여 게임사 465곳을 0~100점으로 평가했습니다.</dd>
+              <dt>역할</dt><dd>기획, 신호 정의, 점수 기준 설계, 결과 검증을 직접 맡았고, 구현은 클로드 코드를 CLI 환경에서 활용했습니다.</dd>
+            </dl>
+          </div>
+          <div class="proj-hero"><div class="shot" data-full="assets/img/crawler-dir.jpg"><img src="assets/img/crawler-dir.jpg" alt="게임사 디렉토리 화면"></div></div>
+        </div>
+        <div style="padding:0 40px 8px">
+          <div class="flow">
+            <div class="step"><span>STEP 1</span><p>18개 매체 뉴스 수집 · 영문 자동 번역</p></div>
+            <div class="step"><span>STEP 2</span><p>수요 신호 키워드로 기사 분류</p></div>
+            <div class="step"><span>STEP 3</span><p>DART·국민연금 API로 매출·인력 연동</p></div>
+            <div class="step"><span>STEP 4</span><p>점수화 → 우선 접촉 대상 선별</p></div>
+          </div>
+        </div>
+        <div class="proj-gallery">
+          <figure><div class="shot" data-full="assets/img/crawler-dir.jpg"><img src="assets/img/crawler-dir.jpg" alt="디렉토리"></div>
+            <figcaption><b>게임사 디렉토리</b> — 465곳을 점수순으로 정렬하고 핫·관심·일반으로 분류</figcaption></figure>
+          <figure><div class="shot" data-full="assets/img/crawler-signal.jpg"><img src="assets/img/crawler-signal.jpg" alt="신호 필터"></div>
+            <figcaption><b>신호 필터</b> — 글로벌 진출 등 수요 신호가 있는 기사만 모아 보기</figcaption></figure>
+          <figure><div class="shot" data-full="assets/img/crawler-jobs.jpg"><img src="assets/img/crawler-jobs.jpg" alt="채용 신호"></div>
+            <figcaption><b>채용 신호</b> — 게임사 서버·인프라 채용 공고를 회사 단위로 집계</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTS -->
+  <section class="block" id="reports">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="num">03 — REPORTS</div><h2>기업·산업 분석 리포트</h2>
+        <p>대학생연합가치투자동아리 SURI에서 직접 작성한 리포트입니다. 표지를 누르면 크게 볼 수 있고, PDF로 내려받을 수 있습니다.</p></div>
+      <div class="reports">
+        <article class="rep reveal">
+          <div class="cover" data-full="assets/img/cover-game-industry.jpg"><img src="assets/img/cover-game-industry.jpg" alt="게임 산업 리포트"></div>
+          <div class="body"><div class="meta">산업 분석 · 17p</div><h3>게임 산업</h3>
+            <p>글로벌 게임 시장 규모와 국가별 시장, 플랫폼별 성장 흐름을 정리한 산업 분석.</p>
+            <div class="actions"><a href="assets/reports/game-industry.pdf" target="_blank" rel="noopener">보기</a><a class="dl" href="assets/reports/game-industry.pdf" download="강민석_게임산업_분석.pdf">PDF ↓</a></div></div>
+        </article>
+        <article class="rep reveal">
+          <div class="cover" data-full="assets/img/cover-shiftup.jpg"><img src="assets/img/cover-shiftup.jpg" alt="시프트업 리포트"></div>
+          <div class="body"><div class="meta">기업 분석 · 2025.08 · 14p</div><h3>시프트업</h3>
+            <p>니케 단일 IP 의존을 스텔라 블레이드가 덜어 낸 구조와 차기 파이프라인을 분석.</p>
+            <div class="actions"><a href="assets/reports/shiftup.pdf" target="_blank" rel="noopener">보기</a><a class="dl" href="assets/reports/shiftup.pdf" download="강민석_시프트업_분석.pdf">PDF ↓</a></div></div>
+        </article>
+        <article class="rep reveal">
+          <div class="cover" data-full="assets/img/cover-hanatour.jpg"><img src="assets/img/cover-hanatour.jpg" alt="하나투어 리포트"></div>
+          <div class="body"><div class="meta">기업 분석 · 2025.05 · 25p</div><h3>하나투어</h3>
+            <p>팬데믹 이후 여행업 구조 재편의 수혜와 여행 수요 반등, 수익성 개선 요인을 분석.</p>
+            <div class="actions"><a href="assets/reports/hanatour.pdf" target="_blank" rel="noopener">보기</a><a class="dl" href="assets/reports/hanatour.pdf" download="강민석_하나투어_분석.pdf">PDF ↓</a></div></div>
+        </article>
+        <article class="rep reveal">
+          <div class="cover wide" data-full="assets/img/cover-silicon2.jpg"><img src="assets/img/cover-silicon2.jpg" alt="실리콘투 리포트"></div>
+          <div class="body"><div class="meta">기업 분석 · 2024 · 28p</div><h3>실리콘투</h3>
+            <p>K-뷰티 글로벌 유통 플랫폼의 사업 구조와 성장 동력을 분석.</p>
+            <div class="actions"><a href="assets/reports/silicon2.pdf" target="_blank" rel="noopener">보기</a><a class="dl" href="assets/reports/silicon2.pdf" download="강민석_실리콘투_분석.pdf">PDF ↓</a></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITY + EDU -->
+  <section class="block soft" id="activity">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="num">04 — ACTIVITY &amp; EDUCATION</div><h2>활동 · 학력 · 자격</h2></div>
+      <div class="two">
+        <div class="panel reveal">
+          <h3>대학생연합가치투자동아리 SURI</h3>
+          <div class="date">2024.09 – 2025.12 · 90~100명 규모</div>
+          <div class="groups">
+            <div class="group"><h4>기업·산업 분석</h4><ul>
+              <li>게임 섹터를 선택해 게임 산업 및 시프트업 분석 리포트 작성·발표</li>
+              <li>단일 IP 의존 구조, 신작 공백기 실적 영향, 두 번째 IP의 역할 분석</li>
+              <li>금융·소비재·여행·해외 기술주 등 다양한 산업 리포트 작성 (DART 사업보고서·재무제표 기반)</li></ul></div>
+            <div class="group"><h4>실전 투자 (SURI FUND)</h4><ul>
+              <li>2주 1회 직접 분석한 기업을 발표하고 실제 매수 여부를 놓고 토론·설득</li></ul></div>
+            <div class="group"><h4>운영진 (2025년 2학기)</h4><ul>
+              <li>학회장: 학기마다 개설되는 신입 교육 학회 4개 중 1개 운영</li>
+              <li>신입회원 기업분석 역량 육성 (신입 50명 중 MVP 배출)</li>
+              <li>전략부장: MT·LT·일일호프 등 동아리 행사 기획·총괄</li></ul></div>
+          </div>
+        </div>
+        <div class="panel reveal">
+          <h3>학력</h3>
+          <ul class="kv">
+            <li><span>강남대학교 경제금융전공</span><span>2019.03 – 2025.08</span></li>
+          </ul>
+          <h4 class="sub">자격증</h4>
+          <ul class="kv">
+            <li><span>AWS Certified AI Practitioner</span><span>2026.04</span></li>
+            <li><span>AWS Certified Cloud Practitioner</span><span>2026.04</span></li>
+            <li><span>투자자산운용사</span><span>2024.06</span></li>
+          </ul>
+          <h4 class="sub">어학</h4>
+          <ul class="kv">
+            <li><span>OPIc IH</span><span>2024.12</span></li>
+            <li><span>TOEIC 850</span><span>2024.08</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>함께 이야기 나누고 싶습니다</h2>
+    <p>강민석 · Kang Minseok</p>
+    <a class="btn primary" href="mailto:kms2086@gmail.com">✉ kms2086@gmail.com</a>
+    <small>© 2026 Kang Minseok</small>
+  </div>
+</footer>
+
+<div class="lb" id="lb"><img alt=""></div>
+
+<script>
+  // theme toggle (per-viewer convenience only)
+  (function(){
+    var root=document.documentElement, key='km-theme';
+    try{var t=localStorage.getItem(key); if(t) root.setAttribute('data-theme',t);}catch(e){}
+    document.getElementById('themeBtn').addEventListener('click',function(){
+      var cur=root.getAttribute('data-theme') ||
+        (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+      var next=cur==='dark'?'light':'dark';
+      root.setAttribute('data-theme',next);
+      try{localStorage.setItem(key,next);}catch(e){}
+    });
+  })();
+  // lightbox
+  (function(){
+    var lb=document.getElementById('lb'), img=lb.querySelector('img');
+    document.querySelectorAll('[data-full]').forEach(function(el){
+      el.addEventListener('click',function(){img.src=el.dataset.full;lb.classList.add('on');});
+    });
+    lb.addEventListener('click',function(){lb.classList.remove('on');});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on');});
+  })();
+  // reveal on scroll
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+</body>
+</html>
