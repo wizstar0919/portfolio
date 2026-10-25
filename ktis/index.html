@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>강민석 | Portfolio</title>
-<meta name="description" content="고객의 운영과 사업을 함께 이해하고 맞춤형 제안을 하는 B2B 영업, 강민석의 포트폴리오">
+<meta name="description" content="고객의 운영과 사업을 이해하고 맞춤형 해결책을 제안하는 B2B 영업, 강민석의 포트폴리오">
 <meta property="og:title" content="강민석 | Portfolio">
-<meta property="og:description" content="고객의 운영과 사업을 함께 이해하고, 맞춤형 제안을 합니다.">
+<meta property="og:description" content="고객의 운영과 사업을 이해하고 맞춤형 해결책을 제안하는 B2B 영업">
 <meta property="og:image" content="../assets/img/profile.jpg">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
@@ -30,10 +30,12 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:72px}
+  html:has(dialog[open]){overflow:hidden}
   body{font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
        background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
+  button{font-family:inherit}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
   /* nav */
@@ -45,7 +47,7 @@
   .nav ul a:hover{color:var(--ink)}
   .nav-right{display:flex;align-items:center}
   .view-btn{border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;
-     height:34px;padding:0 14px;cursor:pointer;font-size:13px;font-weight:600;margin-left:20px;font-family:inherit;white-space:nowrap}
+     height:34px;padding:0 14px;cursor:pointer;font-size:13px;font-weight:600;margin-left:20px;white-space:nowrap}
   .theme-btn{border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;
      width:34px;height:34px;cursor:pointer;font-size:15px;margin-left:8px}
   .view-btn:hover,.theme-btn:hover{color:var(--ink)}
@@ -59,9 +61,9 @@
      padding:6px 12px;border-radius:999px;margin-bottom:22px}
   .hero-name{font-size:32px;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
   .hero-name span{font-size:20px;font-weight:600;color:var(--ink-3);margin-left:10px}
-  .hero h1{font-size:clamp(32px,4.6vw,50px);line-height:1.22;letter-spacing:-.03em;font-weight:800}
+  .hero h1{font-size:clamp(32px,4.4vw,48px);line-height:1.24;letter-spacing:-.03em;font-weight:800}
   .hero h1 em{font-style:normal;color:var(--accent)}
-  .hero p.lead{margin-top:22px;font-size:18px;color:var(--ink-2);text-wrap:pretty}
+  .hero p.lead{margin-top:22px;font-size:17.5px;color:var(--ink-2);text-wrap:pretty}
   .hero-meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
   .btn{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;padding:12px 20px;border-radius:12px;
      border:1px solid var(--line);background:var(--card);transition:.15s}
@@ -85,26 +87,65 @@
   .sec-head{margin-bottom:40px}
   .sec-head .num{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.08em}
   .sec-head h2{font-size:clamp(26px,3.4vw,34px);letter-spacing:-.025em;margin-top:6px}
-  .sec-head p{color:var(--ink-2);margin-top:8px;max-width:680px}
+  .sec-head p{color:var(--ink-2);margin-top:8px;max-width:720px}
 
   /* fit */
   .fit{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
-  .fit-row{display:grid;grid-template-columns:230px 1fr 92px;gap:28px;padding:24px 30px;border-bottom:1px solid var(--line);align-items:start}
+  .fit-row{display:grid;grid-template-columns:230px 1fr 100px;gap:28px;padding:24px 30px;border-bottom:1px solid var(--line);align-items:start}
   .fit-row:last-child{border-bottom:0}
   .fit-row.head{padding:13px 30px;background:var(--bg-soft);font-size:12.5px;font-weight:700;color:var(--ink-3);letter-spacing:.04em}
   .fit-task{font-size:16px;font-weight:700;line-height:1.45}
   .fit-task small{display:block;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:3px;letter-spacing:.06em}
-  .fit ul,.group ul{list-style:none}
-  .fit li,.group li{position:relative;padding-left:14px;font-size:15px;color:var(--ink-2);margin:3px 0}
-  .fit li::before,.group li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--ink-3)}
+  .fit ul,.group ul,.dlg ul.list{list-style:none}
+  .fit li,.group li,.dlg ul.list li{position:relative;padding-left:14px;font-size:15px;color:var(--ink-2);margin:3px 0}
+  .fit li::before,.group li::before,.dlg ul.list li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--ink-3)}
   .fit li b{color:var(--ink);font-weight:700}
-  .fit-link{font-size:13.5px;font-weight:600;color:var(--accent);white-space:nowrap;padding-top:1px;text-align:right}
-  .fit-link:hover{text-decoration:underline}
+  .fit-links{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+  .fit-links a{font-size:13.5px;font-weight:600;color:var(--accent);white-space:nowrap}
+  .fit-links a:hover{text-decoration:underline}
 
-  /* cases */
-  .case{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
-  .case + .case{margin-top:24px}
-  .case-head{padding:34px 36px 0}
+  /* case cards */
+  .cgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+  .ccard{grid-column:span 2;text-align:left;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+     padding:24px;cursor:pointer;display:flex;flex-direction:column;transition:.18s}
+  .ccard.big{grid-column:span 3;padding:28px}
+  .ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+  .ccard .meta{font-size:12.5px;font-weight:700;color:var(--accent);letter-spacing:.02em}
+  .ccard h3{font-size:18.5px;letter-spacing:-.02em;line-height:1.38;margin:6px 0 10px}
+  .ccard.big h3{font-size:22px}
+  .ccard p{font-size:14.5px;color:var(--ink-2);flex:1;text-wrap:pretty}
+  .cstat{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .cstat b{font-size:24px;font-weight:800;color:var(--accent);letter-spacing:-.02em;line-height:1.1}
+  .cstat span{font-size:13px;color:var(--ink-3)}
+  .cstat em{font-style:normal;margin-left:auto;font-size:13.5px;font-weight:600;color:var(--accent);white-space:nowrap}
+
+  /* project cards */
+  .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .pcard{text-align:left;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;
+     cursor:pointer;display:flex;flex-direction:column;transition:.18s;padding:0}
+  .pcard:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .pcard .cover{aspect-ratio:16/9;overflow:hidden;background:var(--bg-soft);border-bottom:1px solid var(--line)}
+  .pcard .cover img{width:100%;height:100%;object-fit:cover;object-position:top left}
+  .pcard .body{padding:24px 26px;display:flex;flex-direction:column;flex:1}
+  .pcard .meta{font-size:12.5px;color:var(--ink-3)}
+  .pcard h3{font-size:22px;letter-spacing:-.02em;margin:4px 0 2px}
+  .pcard .sub{font-size:14.5px;color:var(--ink-2)}
+  .pcard p{font-size:14.5px;color:var(--ink-2);margin-top:12px;flex:1;text-wrap:pretty}
+  .pcard .tag-row{margin:16px 0 0}
+  .pcard .go{margin-top:16px;font-size:13.5px;font-weight:600;color:var(--accent)}
+
+  /* dialog (page-in-page) */
+  .dlg{border:0;padding:24px;background:transparent;width:100%;height:100%;max-width:none;max-height:none;color:var(--ink)}
+  .dlg::backdrop{background:rgba(8,10,14,.62);backdrop-filter:blur(2px)}
+  .dlg-in{max-width:1020px;max-height:calc(100dvh - 48px);margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:22px;
+     box-shadow:0 24px 80px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden}
+  .dlg-bar{flex:none;display:flex;justify-content:flex-end;padding:12px 14px 0}
+  .dlg-x{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--bg-soft);color:var(--ink-2);font-size:15px;cursor:pointer}
+  .dlg-x:hover{color:var(--ink)}
+  .dlg-body{overflow:auto;flex:1;overscroll-behavior:contain}
+
+  /* case detail */
+  .case-head{padding:4px 36px 0}
   .case-head .meta{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.02em}
   .case-head h3{font-size:clamp(22px,2.6vw,28px);letter-spacing:-.025em;margin-top:6px;line-height:1.3}
   .case-body{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;padding:28px 36px 36px;align-items:start}
@@ -134,14 +175,25 @@
   .viz-result{border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
   .viz-result b{font-size:30px;font-weight:800;letter-spacing:-.03em;color:var(--accent);line-height:1.1}
   .viz-result span{font-size:14px;color:var(--ink-2)}
+  .vstats{border-top:1px solid var(--line);padding-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+  .vstats b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--accent);line-height:1.2}
+  .vstats span{display:block;font-size:13px;color:var(--ink-2);margin-top:2px}
   .chips{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
   .chip{aspect-ratio:1;border-radius:10px;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
      font-size:12.5px;font-weight:700;color:var(--ink-3)}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tags span{font-size:13px;font-weight:600;padding:6px 11px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink-2)}
+  .tags.on span{border-color:var(--accent);color:var(--ink)}
   .arrow{text-align:center;font-size:13px;font-weight:600;color:var(--ink-3)}
   .pkgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .pkg{background:var(--card);border:1px solid var(--accent);border-radius:12px;padding:14px 16px;box-shadow:0 0 0 3px var(--accent-soft)}
   .pkg h4{font-size:14.5px;line-height:1.35}
   .pkg p{font-size:13px;color:var(--ink-2);margin-top:6px;line-height:1.5}
+  .pipe{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .pipe li{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  .pipe li b{font-size:13px;color:var(--accent);font-weight:800}
+  .pipe li span{font-size:14px;color:var(--ink-2);line-height:1.45}
+  .pipe li span strong{color:var(--ink)}
 
   /* experience */
   .xp{display:grid;grid-template-columns:240px 1fr;gap:40px;padding:36px 0;border-bottom:1px solid var(--line)}
@@ -156,12 +208,12 @@
   .group h4{font-size:14px;color:var(--ink);margin-bottom:8px;font-weight:700}
   .group li{font-size:14.5px;margin:4px 0}
 
-  /* project */
-  .proj{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
-  .proj-top{display:grid;grid-template-columns:1.1fr 1fr;gap:0}
-  .proj-info{padding:40px}
+  /* project detail */
+  .proj-top{display:grid;grid-template-columns:1.1fr 1fr;gap:0;border-bottom:1px solid var(--line)}
+  .proj-info{padding:8px 40px 36px}
   .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
   .tag{font-size:12.5px;font-weight:600;padding:5px 10px;border-radius:999px;background:var(--bg-soft);color:var(--ink-2);border:1px solid var(--line)}
+  .proj-info .meta{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:12px}
   .proj-info h3{font-size:28px;letter-spacing:-.025em}
   .proj-info .sub{color:var(--ink-2);margin-top:6px}
   .proj-info dl{margin-top:26px}
@@ -171,13 +223,15 @@
   .proj-hero{background:var(--bg-soft);padding:32px;display:flex;align-items:center;border-left:1px solid var(--line)}
   .shot{border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);cursor:zoom-in;background:#fff}
   .shot img{width:100%}
-  .proj-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:32px 40px 40px;border-top:1px solid var(--line)}
+  .proj-flow{padding:28px 40px 0}
+  .proj-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:28px 40px 40px}
   .proj-gallery figcaption{font-size:13.5px;color:var(--ink-2);margin-top:10px}
   .proj-gallery figcaption b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:2px}
-  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
   .step{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--bg)}
   .step span{font-size:12px;font-weight:700;color:var(--ink-3)}
   .step p{font-size:14px;font-weight:600;margin-top:4px;line-height:1.45}
+  .note{font-size:12.5px;color:var(--ink-3);padding:0 40px 32px;margin-top:-16px}
 
   /* skills */
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px}
@@ -223,8 +277,9 @@
   footer small.made{margin-top:6px}
 
   /* lightbox */
-  .lb{position:fixed;inset:0;background:rgba(8,10,14,.86);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;cursor:zoom-out}
-  .lb.on{display:flex}
+  .lb{border:0;padding:24px;background:transparent;width:100%;height:100%;max-width:none;max-height:none;cursor:zoom-out}
+  .lb[open]{display:flex;align-items:center;justify-content:center}
+  .lb::backdrop{background:rgba(8,10,14,.86)}
   .lb img{max-width:min(1400px,100%);max-height:92vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
 
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
@@ -236,7 +291,10 @@
     .kpis{grid-template-columns:repeat(2,1fr)}
     .fit-row{grid-template-columns:1fr;gap:10px}
     .fit-row.head{display:none}
-    .fit-link{text-align:left}
+    .fit-links{flex-direction:row;justify-content:flex-start;gap:16px}
+    .cgrid{grid-template-columns:repeat(2,1fr)}
+    .ccard,.ccard.big{grid-column:auto}
+    .pgrid{grid-template-columns:1fr}
     .case-body{grid-template-columns:1fr}
     .xp{grid-template-columns:1fr;gap:18px}
     .proj-top{grid-template-columns:1fr}
@@ -257,13 +315,20 @@
     .kpi{padding:16px}
     .kpi b{font-size:25px}
     .fit-row{padding:20px 22px}
-    .case-head{padding:26px 22px 0}
-    .case-body{padding:22px 22px 26px;gap:26px}
+    .cgrid{grid-template-columns:1fr}
+    .ccard,.ccard.big{padding:22px}
+    .dlg{padding:0}
+    .dlg-in{max-height:100dvh;height:100dvh;border-radius:0;border:0}
+    .case-head{padding:0 22px}
+    .case-body{padding:22px 22px 30px;gap:26px}
     .viz{padding:18px}
     .pkgs{grid-template-columns:1fr}
     .highlights,.groups{grid-template-columns:1fr}
-    .proj-info{padding:26px}
-    .proj-gallery{padding:24px}
+    .proj-info{padding:0 22px 26px}
+    .proj-hero{padding:20px}
+    .proj-flow{padding:22px 22px 0}
+    .proj-gallery{padding:22px}
+    .note{padding:0 22px 26px}
     .reports{grid-template-columns:1fr}
     .row{grid-template-columns:96px 1fr;gap:12px}
     .card{padding:22px}
@@ -279,17 +344,23 @@
   html.m .kpi b{font-size:25px}
   html.m .fit-row{grid-template-columns:1fr;gap:10px;padding:20px 22px}
   html.m .fit-row.head{display:none}
-  html.m .fit-link{text-align:left}
-  html.m .case-head{padding:26px 22px 0}
-  html.m .case-body{grid-template-columns:1fr;padding:22px 22px 26px;gap:26px}
+  html.m .fit-links{flex-direction:row;justify-content:flex-start;gap:16px}
+  html.m .cgrid{grid-template-columns:1fr}
+  html.m .ccard,html.m .ccard.big{grid-column:auto;padding:22px}
+  html.m .pgrid{grid-template-columns:1fr}
+  html.m .dlg-in{max-width:430px}
+  html.m .case-head{padding:0 22px}
+  html.m .case-body{grid-template-columns:1fr;padding:22px 22px 30px;gap:26px}
   html.m .viz{padding:18px}
   html.m .pkgs{grid-template-columns:1fr}
   html.m .xp{grid-template-columns:1fr;gap:18px}
   html.m .highlights,html.m .groups{grid-template-columns:1fr}
   html.m .proj-top{grid-template-columns:1fr}
-  html.m .proj-hero{border-left:0;border-top:1px solid var(--line)}
-  html.m .proj-info{padding:26px}
-  html.m .proj-gallery{grid-template-columns:1fr;padding:24px}
+  html.m .proj-hero{border-left:0;border-top:1px solid var(--line);padding:20px}
+  html.m .proj-info{padding:0 22px 26px}
+  html.m .proj-flow{padding:22px 22px 0}
+  html.m .proj-gallery{grid-template-columns:1fr;padding:22px}
+  html.m .note{padding:0 22px 26px}
   html.m .flow{grid-template-columns:repeat(2,1fr)}
   html.m .skills{grid-template-columns:1fr}
   html.m .reports{grid-template-columns:1fr}
@@ -318,7 +389,7 @@
         <li><a href="#fit">Fit</a></li>
         <li><a href="#cases">Cases</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#project">Project</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#reports">Reports</a></li>
         <li><a href="#profile">Profile</a></li>
       </ul>
@@ -335,8 +406,8 @@
       <div>
         <span class="eyebrow">B2B Sales · kt is 영업 직무</span>
         <div class="hero-name">강민석 <span>Minseok Kang</span></div>
-        <h1>고객의 운영과 사업을<br>함께 이해하고<br><em>맞춤형 제안</em>을 합니다</h1>
-        <p class="lead">게임사 대상 AWS 영업과 제조 AI B2B 세일즈를 했습니다.<br class="br-d"> 고객사의 사용 현황과 사업을 먼저 살피고, 그에 맞춰 제안을 구성합니다.</p>
+        <h1>고객의 운영과 사업을<br>이해하고 <em>맞춤형 해결책</em>을<br>제안하는 B2B 영업</h1>
+        <p class="lead">메가존클라우드에서는 게임사 대상 AWS 영업을, 인터엑스에서는 제조 AI 솔루션 영업을 담당했습니다.<br class="br-d"> 두 회사 모두에서 고객사의 사용 현황과 사업 특성을 먼저 파악한 뒤 제안을 구성했습니다.</p>
         <div class="hero-meta">
           <a class="btn primary" href="#cases">제안 사례 보기</a>
           <a class="btn" href="mailto:kms2086@gmail.com">✉ kms2086@gmail.com</a>
@@ -357,53 +428,62 @@
   <!-- FIT -->
   <section class="block soft" id="fit">
     <div class="wrap">
-      <div class="sec-head reveal"><div class="num">01 — FIT</div><h2>kt is 영업 업무와 제 경험</h2>
-        <p>공고의 영업 수행업무를 기준으로, 제가 직접 해 본 비슷한 일을 정리했습니다.</p></div>
+      <div class="sec-head reveal"><div class="num">01 — FIT</div><h2>kt is 영업 직무와 관련 경험</h2>
+        <p>채용공고의 영업 직무 수행업무와 우대사항을 기준으로 관련 경험을 정리했습니다.</p></div>
       <div class="fit reveal">
-        <div class="fit-row head"><div>공고 수행업무</div><div>제가 해 본 일</div><div style="text-align:right">자세히</div></div>
+        <div class="fit-row head"><div>수행업무 · 우대사항</div><div>관련 경험</div><div style="text-align:right">자세히</div></div>
         <div class="fit-row">
           <div class="fit-task"><small>DISCOVER</small>신규·가망 고객 발굴 및 리서치</div>
           <ul>
-            <li>게임사 <b>120여 곳</b> 리스트업 및 아웃바운드 컨택, SFDC로 후속 관리</li>
+            <li>게임사 <b>120여 곳</b> 리스트업 및 아웃바운드 컨택, 통화 내용 건별 기록 및 후속 관리</li>
             <li>뉴스·공시 데이터로 게임사 <b>465곳</b>을 점수화하는 리드 발굴 도구 제작</li>
             <li>파트너 사업설명회 섭외 콜드콜 50건 이상, 참여 기업 <b>11개사</b> 확정</li>
           </ul>
-          <a class="fit-link" href="#project">프로젝트 →</a>
+          <div class="fit-links"><a href="#case-d">사례 D →</a><a href="#proj-pulse">프로젝트 →</a></div>
         </div>
         <div class="fit-row">
           <div class="fit-task"><small>CONSULT</small>신규 영업대상·기존고객 관리 및 컨설팅</div>
           <ul>
             <li>게임사 어카운트 <b>160개</b>의 과금 내역과 운영·개발 중인 게임을 함께 분석</li>
             <li>출시를 앞둔 고객사에 할인 프로그램을 제안해 비용 <b>약 10%</b> 절감</li>
-            <li>고객·파트너 미팅 30건 이상 동행, 요구사항 정리 및 회의록 작성</li>
+            <li>인바운드 문의 20건 이상 응대, 미팅 30건 이상 동행하며 도입 목적·설비·데이터 유무 확인</li>
           </ul>
-          <a class="fit-link" href="#case-a">사례 A →</a>
+          <div class="fit-links"><a href="#case-a">사례 A →</a><a href="#case-c">사례 C →</a></div>
         </div>
         <div class="fit-row">
           <div class="fit-task"><small>PROPOSE</small>입찰 제안서 작성 및 PT</div>
           <ul>
             <li>중소벤처기업부 제조 AI 솔루션 공모전 신청서 작성, 153개 기업 중 <b>최종 10개</b> 선정</li>
-            <li>정부지원사업·민간 제안서 <b>10건 이상</b> 작성 지원</li>
-            <li>사내 클라우드·AI 개론 발표 (약 20명 대상)</li>
+            <li>정부지원사업·민간 제안서 <b>10건 이상</b> 작성 지원, 레퍼런스 40건 정리 후 16건을 통합제안서에 반영</li>
+            <li>사내 발표 2회 (클라우드·AI 개론, 계약 프로세스 개선 워크숍)</li>
           </ul>
-          <a class="fit-link" href="#case-b">사례 B →</a>
+          <div class="fit-links"><a href="#case-b">사례 B →</a></div>
         </div>
         <div class="fit-row">
           <div class="fit-task"><small>CLOSE</small>신규 수주·재계약 체결</div>
           <ul>
             <li>신규·갱신 계약 <b>6건</b> 클로징 (업셀 4건, 약 2,400만 원)</li>
             <li>제안부터 날인·정산까지 계약 전 과정 수행</li>
+            <li>계약 전 단계를 문서화하고 병목을 진단해 개선안 제안</li>
           </ul>
-          <a class="fit-link" href="#experience">경력 →</a>
+          <div class="fit-links"><a href="#case-e">사례 E →</a><a href="#experience">경력 →</a></div>
         </div>
         <div class="fit-row">
-          <div class="fit-task"><small>AI</small>AI 기술 활용 (공고 우대사항)</div>
+          <div class="fit-task"><small>우대사항</small>경영·재무회계 지식</div>
+          <ul>
+            <li>경제금융전공 졸업, 투자자산운용사 취득</li>
+            <li>대학생연합가치투자동아리 SURI에서 사업보고서·재무제표 기반 기업·산업 분석 리포트 작성</li>
+          </ul>
+          <div class="fit-links"><a href="#reports">리포트 →</a></div>
+        </div>
+        <div class="fit-row">
+          <div class="fit-task"><small>우대사항</small>AI 기술 활용 역량</div>
           <ul>
             <li>스마트팩토리 수준 자가진단 챗봇 제작, 실제 고객사 배포</li>
-            <li>AI를 활용한 학습용 웹앱을 직접 만들어 AWS 자격증 <b>2종</b> 취득</li>
-            <li>클로드 코드(CLI)를 활용해 리드 발굴 도구 구현</li>
+            <li>Claude API를 연동한 학습용 웹앱을 직접 만들어 AWS 자격증 <b>2종</b> 취득</li>
+            <li>클로드 코드(CLI)를 활용해 리드 발굴 도구와 세일즈 플래너 구현</li>
           </ul>
-          <a class="fit-link" href="#skills">도구 →</a>
+          <div class="fit-links"><a href="#projects">프로젝트 →</a></div>
         </div>
       </div>
     </div>
@@ -413,64 +493,39 @@
   <section class="block" id="cases">
     <div class="wrap">
       <div class="sec-head reveal"><div class="num">02 — CASES</div><h2>제안 사례</h2>
-        <p>고객과 조건을 먼저 이해하고, 그에 맞춰 제안을 구성한 두 가지 사례입니다.</p></div>
-
-      <article class="case reveal" id="case-a">
-        <div class="case-head">
-          <div class="meta">CASE A · 메가존클라우드 · 2026 · 게임사 대상 AWS 영업</div>
+        <p>고객과 조건을 먼저 파악한 뒤 제안을 구성한 사례입니다. 카드를 누르면 자세한 내용을 볼 수 있습니다.</p></div>
+      <div class="cgrid">
+        <button class="ccard big reveal" type="button" data-open="case-a">
+          <span class="meta">CASE A · 메가존클라우드 · 2026</span>
           <h3>고객 맞춤형 영업으로 만든 10% 비용 절감</h3>
-        </div>
-        <div class="case-body">
-          <ol class="steps">
-            <li><b>고객 이해</b><p>담당한 160개 고객사의 과금 내역에서 사용 서비스와 비용 구조를 확인했습니다. 비용이 왜 그렇게 나오는지 알기 위해 운영 중이거나 개발 중인 게임을 확인하고 장르별 서버 구조를 공부했습니다.</p></li>
-            <li><b>상황 파악</b><p>한 고객사는 3~4개월 뒤 출시할 로그라이크 모바일 게임을 개발하고 있었고, 비용 대부분이 컴퓨팅 자원에 집중되어 있었습니다. 출시 후 사용량은 예측하기 어려웠습니다.</p></li>
-            <li><b>제안</b><p>사용량을 약정하면 실제 사용량이 약정보다 적을 때 쓰지 않는 비용까지 부담해야 했습니다. 그래서 사용량 약정 없이 기간만 약정하는 할인 프로그램을 제안했습니다.</p></li>
-            <li><b>결과</b><p>계약을 체결했고, 고객은 서비스 변경 없이 약 10%의 비용을 절감할 수 있었습니다.</p></li>
-          </ol>
-          <div class="viz" aria-label="사용량 약정과 기간 약정 비교">
-            <div class="viz-title">출시 전이라 사용량을 예측하기 어려운 고객</div>
-            <div class="opt">
-              <h4>사용량 약정</h4>
-              <p>실제 사용량이 약정보다 적으면, 쓰지 않는 비용까지 부담</p>
-              <div class="meter"><span class="use" style="width:58%"></span><span class="waste"></span></div>
-              <div class="legend"><span><i></i>실제 사용량</span><span><i class="w"></i>쓰지 않는 약정분</span></div>
-            </div>
-            <div class="opt pick">
-              <h4>기간만 약정 <em>제안</em></h4>
-              <p>사용량이 달라져도 부담 없이 할인 적용</p>
-              <div class="meter"><span class="use" style="width:58%"></span></div>
-              <div class="legend"><span><i></i>실제 사용량</span></div>
-            </div>
-            <div class="viz-note">※ 이해를 돕기 위한 개념도입니다.</div>
-            <div class="viz-result"><b>약 10%</b><span>서비스 변경 없이 비용 절감 · 계약 체결</span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="case reveal" id="case-b">
-        <div class="case-head">
-          <div class="meta">CASE B · 인터엑스 · 2025 · 중소벤처기업부 제조 AI 솔루션 공모전</div>
+          <p>출시를 앞둔 게임사의 과금 구조와 사업 상황을 함께 보고, 사용량 약정 없이 기간만 약정하는 할인 프로그램을 제안했습니다.</p>
+          <span class="cstat"><b>약 10%</b><span>서비스 변경 없이 비용 절감</span><em>자세히 →</em></span>
+        </button>
+        <button class="ccard big reveal" type="button" data-open="case-b">
+          <span class="meta">CASE B · 인터엑스 · 2025</span>
           <h3>Top 10 선정으로 증명한 전략적 패키징의 힘</h3>
-        </div>
-        <div class="case-body">
-          <ol class="steps">
-            <li><b>상황</b><p>구성원들이 본업으로 바빠 준비를 맡기 어려운 상황이었습니다. 처음 해 보는 일이었지만 제가 맡겠다고 말씀드렸고, 발표를 제외한 제출 준비 전 과정을 담당했습니다.</p></li>
-            <li><b>문제</b><p>기업당 솔루션은 2개까지만 제출할 수 있었습니다. 6개 솔루션 중 2개만 고르면, 여러 솔루션을 통합해 제공할 수 있다는 회사의 강점을 충분히 보여주기 어려웠습니다.</p></li>
-            <li><b>실행</b><p>AI 인력과 인프라가 부족한 중소 제조기업이 연관된 기능을 한 번에 도입할 수 있도록 6개 솔루션을 2개 패키지로 묶었습니다. 담당 팀에 적용 사례와 성과 자료를 항목별로 요청하고, 고객의 문제·해결 방안·기대 효과 순으로 신청서를 작성했습니다. 진행 상황은 노션에 정리해 선임에게 수시로 보고했습니다.</p></li>
-            <li><b>결과</b><p>참가 기업 153개 중 최종 10개 기업에 선정되었고, 2026년 중소벤처기업부 사업 가점과 클라우드 크레딧을 받았으며 솔루션 자료집에도 수록되었습니다.</p></li>
-          </ol>
-          <div class="viz" aria-label="6개 솔루션을 2개 패키지로 재구성">
-            <div class="viz-title">기업당 2개 제출 제한</div>
-            <div class="chips"><div class="chip">AI 1</div><div class="chip">AI 2</div><div class="chip">AI 3</div><div class="chip">AI 4</div><div class="chip">AI 5</div><div class="chip">AI 6</div></div>
-            <div class="arrow">↓ 연관된 기능끼리 묶어 공모전 분류에 맞춤</div>
-            <div class="pkgs">
-              <div class="pkg"><h4>공정/자동화 AI</h4><p>장비 한 대에서 시작해 라인 전체로 넓혀 갈 수 있게 구성</p></div>
-              <div class="pkg"><h4>비즈니스/생성 AI</h4><p>별도의 AI 인력이나 클라우드 없이 사내 서버에서 운영</p></div>
-            </div>
-            <div class="viz-result"><b>153 → 10</b><span>참가 기업 중 최종 선정</span></div>
-          </div>
-        </div>
-      </article>
+          <p>기업당 2개만 제출할 수 있는 공모전에서 6개 솔루션을 2개 패키지로 재구성하고 신청서를 작성했습니다.</p>
+          <span class="cstat"><b>153 → 10</b><span>참가 기업 중 최종 선정</span><em>자세히 →</em></span>
+        </button>
+        <button class="ccard reveal" type="button" data-open="case-c">
+          <span class="meta">CASE C · 인터엑스 · 2025</span>
+          <h3>막연한 AI 도입 요구를 구체적인 제안 기준으로</h3>
+          <p>도입 목적·설비·데이터 유무부터 확인하고, 고객이 스스로 수준을 점검할 수 있는 자가진단 챗봇을 만들었습니다.</p>
+          <span class="cstat"><b>5건+</b><span>사업 연계</span><em>자세히 →</em></span>
+        </button>
+        <button class="ccard reveal" type="button" data-open="case-d">
+          <span class="meta">CASE D · 메가존클라우드 · 2026</span>
+          <h3>게임사 121곳을 잠재 고객으로 리스트업</h3>
+          <p>플랫폼·장르·서버 필요성을 정리하고, 통화 내용을 건별로 기록해 후속 관리했습니다.</p>
+          <span class="cstat"><b>121곳</b><span>콜 로그 41건</span><em>자세히 →</em></span>
+        </button>
+        <button class="ccard reveal" type="button" data-open="case-e">
+          <span class="meta">CASE E · 메가존클라우드 · 2026</span>
+          <h3>계약 프로세스 병목을 찾아 개선안 제안</h3>
+          <p>계약 전 단계를 문서화하고 병목을 진단해, 자동화 방안을 팀 워크숍에서 발표했습니다.</p>
+          <span class="cstat"><b>병목 5곳</b><span>자동화 4종 제안</span><em>자세히 →</em></span>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -546,42 +601,34 @@
     </div>
   </section>
 
-  <!-- PROJECT -->
-  <section class="block" id="project">
+  <!-- PROJECTS -->
+  <section class="block" id="projects">
     <div class="wrap">
-      <div class="sec-head reveal"><div class="num">04 — PROJECT</div><h2>잠재 고객 리서치 대시보드</h2>
-        <p>흩어진 기업 소식과 공시 데이터를 한곳에 모아,<br class="br-d"> 어떤 고객을 언제 만날지 정하는 도구를 직접 기획하고 만들었습니다.</p></div>
-
-      <div class="proj reveal">
-        <div class="proj-top">
-          <div class="proj-info">
-            <div class="tag-row"><span class="tag">Python · Flask</span><span class="tag">DART Open API</span><span class="tag">국민연금 API</span><span class="tag">클로드 코드 (CLI)</span></div>
+      <div class="sec-head reveal"><div class="num">04 — PROJECTS</div><h2>직접 만든 영업 도구</h2>
+        <p>영업 현장에서 필요했던 도구를 직접 기획하고 클로드 코드로 구현했습니다. 카드를 누르면 화면과 설명을 볼 수 있습니다.</p></div>
+      <div class="pgrid">
+        <button class="pcard reveal" type="button" data-open="proj-pulse">
+          <span class="cover"><img src="../assets/img/crawler-dir.jpg" alt="Game Pulse 게임사 디렉토리 화면"></span>
+          <span class="body">
+            <span class="meta">2026.05 – 06 · 개인 프로젝트</span>
             <h3>Game Pulse</h3>
-            <div class="sub">게임 뉴스 · 산업 신호 크롤러 + 리드 스코어링</div>
-            <dl>
-              <dt>문제</dt><dd>게임사 소식은 여러 매체에 흩어져 있고,<br class="br-d"> 기업 규모만으로는 실제 인프라 수요를 가늠하기 어려웠습니다.</dd>
-              <dt>해결</dt><dd>국내외 18개 매체의 기사를 모아<br class="br-d"> 신규 개발·글로벌 진출 같은 신호를 키워드로 분류하고,<br class="br-d"> DART와 국민연금 API로 매출과 인력 변화를 붙여<br class="br-d"> 게임사 465곳을 0~100점으로 평가했습니다.</dd>
-              <dt>역할</dt><dd>기획, 신호 정의, 점수 기준 설계, 결과 검증을 직접 맡았고,<br class="br-d"> 구현은 클로드 코드를 CLI 환경에서 활용했습니다.</dd>
-            </dl>
-          </div>
-          <div class="proj-hero"><div class="shot" data-full="../assets/img/crawler-dir.jpg"><img src="../assets/img/crawler-dir.jpg" alt="게임사 디렉토리 화면"></div></div>
-        </div>
-        <div style="padding:0 40px 8px">
-          <div class="flow">
-            <div class="step"><span>STEP 1</span><p>18개 매체 뉴스 수집 · 영문 자동 번역</p></div>
-            <div class="step"><span>STEP 2</span><p>수요 신호 키워드로 기사 분류</p></div>
-            <div class="step"><span>STEP 3</span><p>DART·국민연금 API로 매출·인력 연동</p></div>
-            <div class="step"><span>STEP 4</span><p>점수화 → 우선 접촉 대상 선별</p></div>
-          </div>
-        </div>
-        <div class="proj-gallery">
-          <figure><div class="shot" data-full="../assets/img/crawler-dir.jpg"><img src="../assets/img/crawler-dir.jpg" alt="디렉토리"></div>
-            <figcaption><b>게임사 디렉토리</b>465곳을 점수순으로 정렬하고<br>핫·관심·일반으로 분류</figcaption></figure>
-          <figure><div class="shot" data-full="../assets/img/crawler-signal.jpg"><img src="../assets/img/crawler-signal.jpg" alt="신호 필터"></div>
-            <figcaption><b>신호 필터</b>글로벌 진출 등 수요 신호가 있는<br>기사만 모아 보기</figcaption></figure>
-          <figure><div class="shot" data-full="../assets/img/crawler-jobs.jpg"><img src="../assets/img/crawler-jobs.jpg" alt="채용 신호"></div>
-            <figcaption><b>채용 신호</b>게임사 서버·인프라 채용 공고를<br>회사 단위로 집계</figcaption></figure>
-        </div>
+            <span class="sub">잠재 고객 리서치 대시보드</span>
+            <p>흩어진 게임사 소식과 공시 데이터를 한곳에 모아, 게임사 465곳을 0~100점으로 평가하고 우선 접촉 대상을 고르는 도구입니다.</p>
+            <span class="tag-row"><span class="tag">Python · Flask</span><span class="tag">DART Open API</span><span class="tag">국민연금 API</span></span>
+            <span class="go">자세히 보기 →</span>
+          </span>
+        </button>
+        <button class="pcard reveal" type="button" data-open="proj-planner">
+          <span class="cover"><img src="../assets/img/planner-today.jpg" alt="세일즈 플래너 오늘 화면"></span>
+          <span class="body">
+            <span class="meta">2026.06 · 메가존클라우드 재직 중 개인 업무용</span>
+            <h3>세일즈 플래너</h3>
+            <span class="sub">업무 일정 + 계약 진행 관리 웹앱</span>
+            <p>매일 쓰는 일정 관리를 중심에 두고, 회신이 필요한 업무와 빠뜨리기 쉬운 계약 단계를 알려 주는 기능을 더했습니다.</p>
+            <span class="tag-row"><span class="tag">HTML · JavaScript</span><span class="tag">localStorage</span><span class="tag">클로드 코드 (CLI)</span></span>
+            <span class="go">자세히 보기 →</span>
+          </span>
+        </button>
       </div>
     </div>
   </section>
@@ -675,7 +722,220 @@
   </div>
 </footer>
 
-<div class="lb" id="lb"><img alt=""></div>
+<!-- ===== 상세 내용 (카드를 누르면 페이지 안 창으로 열림) ===== -->
+<template id="t-case-a">
+  <div class="case-head">
+    <div class="meta">CASE A · 메가존클라우드 · 2026 · 게임사 대상 AWS 영업</div>
+    <h3>고객 맞춤형 영업으로 만든 10% 비용 절감</h3>
+  </div>
+  <div class="case-body">
+    <ol class="steps">
+      <li><b>고객 이해</b><p>담당한 160개 고객사의 과금 내역에서 사용 서비스와 비용 구조를 확인했습니다. 비용이 왜 그렇게 나오는지 알기 위해 운영 중이거나 개발 중인 게임을 확인하고 장르별 서버 구조를 공부했습니다.</p></li>
+      <li><b>상황 파악</b><p>한 고객사는 3~4개월 뒤 출시할 로그라이크 모바일 게임을 개발하고 있었고, 비용 대부분이 컴퓨팅 자원에 집중되어 있었습니다. 출시 후 사용량은 예측하기 어려웠습니다.</p></li>
+      <li><b>제안</b><p>사용량을 약정하면 실제 사용량이 약정보다 적을 때 쓰지 않는 비용까지 부담해야 했습니다. 그래서 사용량 약정 없이 기간만 약정하는 할인 프로그램을 제안했습니다.</p></li>
+      <li><b>결과</b><p>계약을 체결했고, 고객은 서비스 변경 없이 약 10%의 비용을 절감할 수 있었습니다.</p></li>
+    </ol>
+    <div class="viz" aria-label="사용량 약정과 기간 약정 비교">
+      <div class="viz-title">출시 전이라 사용량을 예측하기 어려운 고객</div>
+      <div class="opt">
+        <h4>사용량 약정</h4>
+        <p>실제 사용량이 약정보다 적으면, 쓰지 않는 비용까지 부담</p>
+        <div class="meter"><span class="use" style="width:58%"></span><span class="waste"></span></div>
+        <div class="legend"><span><i></i>실제 사용량</span><span><i class="w"></i>쓰지 않는 약정분</span></div>
+      </div>
+      <div class="opt pick">
+        <h4>기간만 약정 <em>제안</em></h4>
+        <p>사용량이 달라져도 부담 없이 할인 적용</p>
+        <div class="meter"><span class="use" style="width:58%"></span></div>
+        <div class="legend"><span><i></i>실제 사용량</span></div>
+      </div>
+      <div class="viz-note">※ 이해를 돕기 위한 개념도입니다.</div>
+      <div class="viz-result"><b>약 10%</b><span>서비스 변경 없이 비용 절감 · 계약 체결</span></div>
+    </div>
+  </div>
+</template>
+
+<template id="t-case-b">
+  <div class="case-head">
+    <div class="meta">CASE B · 인터엑스 · 2025 · 중소벤처기업부 제조 AI 솔루션 공모전</div>
+    <h3>Top 10 선정으로 증명한 전략적 패키징의 힘</h3>
+  </div>
+  <div class="case-body">
+    <ol class="steps">
+      <li><b>상황</b><p>구성원들이 본업으로 바빠 준비를 맡기 어려운 상황이었습니다. 처음 해 보는 일이었지만 제가 맡겠다고 말씀드렸고, 발표를 제외한 제출 준비 전 과정을 담당했습니다.</p></li>
+      <li><b>문제</b><p>기업당 솔루션은 2개까지만 제출할 수 있었습니다. 6개 솔루션 중 2개만 고르면, 여러 솔루션을 통합해 제공할 수 있다는 회사의 강점을 충분히 보여주기 어려웠습니다.</p></li>
+      <li><b>실행</b><p>AI 인력과 인프라가 부족한 중소 제조기업이 연관된 기능을 한 번에 도입할 수 있도록 6개 솔루션을 2개 패키지로 묶었습니다. 담당 팀에 적용 사례와 성과 자료를 항목별로 요청하고, 고객의 문제·해결 방안·기대 효과 순으로 신청서를 작성했습니다. 진행 상황은 노션에 정리해 선임에게 수시로 보고했습니다.</p></li>
+      <li><b>결과</b><p>참가 기업 153개 중 최종 10개 기업에 선정되었고, 2026년 중소벤처기업부 사업 가점과 클라우드 크레딧을 받았으며 솔루션 자료집에도 수록되었습니다.</p></li>
+    </ol>
+    <div class="viz" aria-label="6개 솔루션을 2개 패키지로 재구성">
+      <div class="viz-title">기업당 2개 제출 제한</div>
+      <div class="chips"><div class="chip">AI 1</div><div class="chip">AI 2</div><div class="chip">AI 3</div><div class="chip">AI 4</div><div class="chip">AI 5</div><div class="chip">AI 6</div></div>
+      <div class="arrow">↓ 연관된 기능끼리 묶어 공모전 분류에 맞춤</div>
+      <div class="pkgs">
+        <div class="pkg"><h4>공정/자동화 AI</h4><p>장비 한 대에서 시작해 라인 전체로 넓혀 갈 수 있게 구성</p></div>
+        <div class="pkg"><h4>비즈니스/생성 AI</h4><p>별도의 AI 인력이나 클라우드 없이 사내 서버에서 운영</p></div>
+      </div>
+      <div class="viz-result"><b>153 → 10</b><span>참가 기업 중 최종 선정</span></div>
+    </div>
+  </div>
+</template>
+
+<template id="t-case-c">
+  <div class="case-head">
+    <div class="meta">CASE C · 인터엑스 · 2025 · 인바운드 응대 · 고객 미팅</div>
+    <h3>막연한 AI 도입 요구를 구체적인 제안 기준으로</h3>
+  </div>
+  <div class="case-body">
+    <ol class="steps">
+      <li><b>상황</b><p>고객사들은 현장의 불편을 해결하기 위해 AI 도입을 원했지만, 구체적으로 무엇이 필요한지는 모르는 경우가 많았습니다. AI 도입보다 데이터 확보 같은 선행 과제가 필요한 곳도 있었습니다.</p></li>
+      <li><b>확인</b><p>20건 이상의 고객 문의를 직접 응대하고 30회 이상의 미팅에 동행하며 도입 목적과 기존 설비, 데이터 유무를 먼저 확인했습니다. 미팅에서 나온 요구사항과 Pain Point는 회의록으로 정리해 내부에 공유했습니다.</p></li>
+      <li><b>도구화</b><p>고객사 방문 체크리스트를 템플릿으로 만들어 팀에서 실제로 사용했습니다. 고객사가 스스로 스마트팩토리 수준을 확인할 수 있도록 자가진단 챗봇을 만들어 실제 고객사에 배포했습니다.</p></li>
+      <li><b>결과</b><p>인바운드 문의 중 3건을 미팅으로 전환했고, 동행한 미팅 가운데 5건 이상이 사업 연계로 이어졌습니다.</p></li>
+    </ol>
+    <div class="viz" aria-label="고객 요구를 제안 기준으로 바꾸는 과정">
+      <div class="viz-title">AI 도입을 원하지만 필요한 것이 분명하지 않은 고객</div>
+      <div class="arrow">↓ 먼저 확인한 것</div>
+      <div class="tags on"><span>도입 목적</span><span>기존 설비</span><span>데이터 유무</span></div>
+      <div class="arrow">↓</div>
+      <div class="opt pick">
+        <h4>구체적인 제안 기준</h4>
+        <p>AI 도입 전에 데이터 확보 같은 선행 과제가 필요한지도 함께 판단</p>
+      </div>
+      <div class="vstats">
+        <div><b>20건+ → 3건</b><span>인바운드 문의 → 미팅 전환</span></div>
+        <div><b>30건+ → 5건+</b><span>미팅 동행 → 사업 연계</span></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template id="t-case-d">
+  <div class="case-head">
+    <div class="meta">CASE D · 메가존클라우드 · 2026 · 신규 고객 발굴</div>
+    <h3>게임사 121곳을 잠재 고객으로 리스트업</h3>
+  </div>
+  <div class="case-body">
+    <ol class="steps">
+      <li><b>대상 선정</b><p>2026 코리아 인디게임 데브캠프와 정부 지원사업 게임더하기에 선정된 게임사를 모아 121곳을 잠재 고객으로 리스트업했습니다.</p></li>
+      <li><b>고객 정보 정리</b><p>업체별 플랫폼, 장르, 서버 필요성, 멀티플레이 가능성, 담당자를 표로 정리했습니다. 서버가 필요한 게임인지에 따라 클라우드 수요가 달라지기 때문입니다.</p></li>
+      <li><b>컨택과 기록</b><p>직접 연락해 현재 상황, 클라우드 사용 현황, 후속 액션, 재연락 시점을 콜 로그 41건으로 기록했고, 관심을 보인 곳에는 자료 메일 18건을 보냈습니다.</p></li>
+      <li><b>행사 연계</b><p>인디게임 행사에 참여해 신규 리드를 확보하고 CRM(SFDC)으로 관리했습니다. 인디게임포럼에서 리드 10개 이상, 게임더하기 설명회에서 리드 10개(유효 리드 4개)를 확보했습니다.</p></li>
+    </ol>
+    <div class="viz" aria-label="업체별 관리 항목">
+      <div class="viz-title">업체별 기본 정보</div>
+      <div class="tags"><span>플랫폼</span><span>장르</span><span>서버 필요성</span><span>멀티플레이 가능성</span><span>담당자</span></div>
+      <div class="viz-title">통화 기록 (콜 로그)</div>
+      <div class="tags on"><span>현재 상황</span><span>클라우드 사용 현황</span><span>후속 액션</span><span>재연락 시점</span><span>특이사항</span></div>
+      <div class="vstats">
+        <div><b>121곳</b><span>잠재 고객 리스트업</span></div>
+        <div><b>41건</b><span>콜 로그 기록</span></div>
+        <div><b>18건</b><span>자료 메일 송부</span></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template id="t-case-e">
+  <div class="case-head">
+    <div class="meta">CASE E · 메가존클라우드 · 2026 · 영업 관리</div>
+    <h3>계약 프로세스 병목을 찾아 개선안 제안</h3>
+  </div>
+  <div class="case-body">
+    <ol class="steps">
+      <li><b>문제</b><p>여러 계약을 동시에 진행하다 보면 고객 회신이 늦어지거나 필수 단계를 빠뜨려 계약에 차질이 생길 수 있었습니다.</p></li>
+      <li><b>구조화</b><p>계약 유형 두 가지의 전 단계를 문서화하고 확인 포인트와 분기 조건을 표시했습니다. 순서도는 Python 코드로 생성해 문서가 바뀌면 다시 실행해 갱신할 수 있게 했습니다.</p></li>
+      <li><b>진단</b><p>병목 5곳을 찾아 '고객 회신을 기다리는 단계'와 '내부에서 빠뜨리기 쉬운 단계'로 원인을 나눴습니다.</p></li>
+      <li><b>제안</b><p>병목마다 대응하는 자동화 방안 4가지를 정리하고, 10분 분량 발표를 직접 구성해 유닛 구성원 약 20명 앞에서 워크숍 발표를 했습니다. 팀 매니저의 의견을 받아 제안을 보완했고, 아이디어 일부는 세일즈 플래너 화면으로 직접 구현했습니다.</p></li>
+    </ol>
+    <div class="viz" aria-label="계약 프로세스 개선 흐름">
+      <div class="viz-title">문서화부터 제안까지</div>
+      <ol class="pipe">
+        <li><b>문서화</b><span>계약 유형 2가지 · <strong>17·19단계</strong> 정리</span></li>
+        <li><b>진단</b><span><strong>병목 5곳</strong> 식별 · 원인별 분류</span></li>
+        <li><b>제안</b><span><strong>자동화 4종</strong> · 약 20명 대상 워크숍 발표</span></li>
+        <li><b>도구화</b><span>세일즈 플래너에 알림 화면으로 구현</span></li>
+      </ol>
+      <div class="viz-note">※ 채택·실행 전, 제안 단계까지 진행했습니다.</div>
+    </div>
+  </div>
+</template>
+
+<template id="t-proj-pulse">
+  <div class="proj-top">
+    <div class="proj-info">
+      <div class="meta">PROJECT · 2026.05 – 06 · 개인</div>
+      <div class="tag-row"><span class="tag">Python · Flask</span><span class="tag">DART Open API</span><span class="tag">국민연금 API</span><span class="tag">클로드 코드 (CLI)</span></div>
+      <h3>Game Pulse</h3>
+      <div class="sub">게임 뉴스 · 산업 신호 크롤러 + 리드 스코어링</div>
+      <dl>
+        <dt>문제</dt><dd>게임사 소식은 여러 매체에 흩어져 있고, 기업 규모만으로는 실제 인프라 수요를 가늠하기 어려웠습니다.</dd>
+        <dt>해결</dt><dd>국내외 18개 매체의 기사를 모아 신규 개발·글로벌 진출 같은 신호를 키워드로 분류하고, DART와 국민연금 API로 매출과 인력 변화를 붙여 게임사 465곳을 0~100점으로 평가했습니다.</dd>
+        <dt>역할</dt><dd>기획, 신호 정의, 점수 기준 설계, 결과 검증을 직접 맡았고, 구현은 클로드 코드를 CLI 환경에서 활용했습니다.</dd>
+      </dl>
+    </div>
+    <div class="proj-hero"><div class="shot" data-full="../assets/img/crawler-dir.jpg"><img src="../assets/img/crawler-dir.jpg" alt="게임사 디렉토리 화면"></div></div>
+  </div>
+  <div class="proj-flow">
+    <div class="flow">
+      <div class="step"><span>STEP 1</span><p>18개 매체 뉴스 수집 · 영문 자동 번역</p></div>
+      <div class="step"><span>STEP 2</span><p>수요 신호 키워드로 기사 분류</p></div>
+      <div class="step"><span>STEP 3</span><p>DART·국민연금 API로 매출·인력 연동</p></div>
+      <div class="step"><span>STEP 4</span><p>점수화 → 우선 접촉 대상 선별</p></div>
+    </div>
+  </div>
+  <div class="proj-gallery">
+    <figure><div class="shot" data-full="../assets/img/crawler-dir.jpg"><img src="../assets/img/crawler-dir.jpg" alt="디렉토리"></div>
+      <figcaption><b>게임사 디렉토리</b>465곳을 점수순으로 정렬하고 핫·관심·일반으로 분류</figcaption></figure>
+    <figure><div class="shot" data-full="../assets/img/crawler-signal.jpg"><img src="../assets/img/crawler-signal.jpg" alt="신호 필터"></div>
+      <figcaption><b>신호 필터</b>글로벌 진출 등 수요 신호가 있는 기사만 모아 보기</figcaption></figure>
+    <figure><div class="shot" data-full="../assets/img/crawler-jobs.jpg"><img src="../assets/img/crawler-jobs.jpg" alt="채용 신호"></div>
+      <figcaption><b>채용 신호</b>게임사 서버·인프라 채용 공고를 회사 단위로 집계</figcaption></figure>
+  </div>
+</template>
+
+<template id="t-proj-planner">
+  <div class="proj-top">
+    <div class="proj-info">
+      <div class="meta">PROJECT · 2026.06 · 메가존클라우드 재직 중 개인 업무용</div>
+      <div class="tag-row"><span class="tag">HTML · JavaScript</span><span class="tag">localStorage</span><span class="tag">클로드 코드 (CLI)</span></div>
+      <h3>세일즈 플래너</h3>
+      <div class="sub">업무 일정 + 계약 진행 관리 웹앱</div>
+      <dl>
+        <dt>문제</dt><dd>여러 계약을 동시에 진행하면서 고객 회신 지연, 필수 단계 누락, 진행 상황 파악의 어려움이 반복되었습니다.</dd>
+        <dt>해결</dt><dd>매일 쓰는 일정 관리를 중심에 두고 계약 관리 기능을 보조로 더했습니다. 오늘·주간·월간·회고·고객사·분석 6개 화면에서 회신이 필요한 업무, 기한이 지난 일, 빠진 단계를 한눈에 볼 수 있게 했습니다.</dd>
+        <dt>설계 판단</dt><dd>계약 자동화를 전면에 두면 매일 쓰지 않게 된다고 보고, 일정 관리를 본체로 두도록 처음 기획을 바꿨습니다.</dd>
+        <dt>역할</dt><dd>기획, 화면 설계, 네 차례의 피드백 반영 개선을 직접 맡았고, 구현은 클로드 코드를 활용했습니다. 사내 시스템 연동 전 단계까지 완성했습니다.</dd>
+      </dl>
+    </div>
+    <div class="proj-hero"><div class="shot" data-full="../assets/img/planner-today.jpg"><img src="../assets/img/planner-today.jpg" alt="세일즈 플래너 오늘 화면"></div></div>
+  </div>
+  <div class="proj-flow">
+    <div class="flow">
+      <div class="step"><span>STEP 1</span><p>월·주·일 단위 업무 일정 관리</p></div>
+      <div class="step"><span>STEP 2</span><p>계약 업무에 진행 단계 표시</p></div>
+      <div class="step"><span>STEP 3</span><p>회신 지연 · 단계 누락 알림</p></div>
+      <div class="step"><span>STEP 4</span><p>회고로 미룬 이유 기록 · 패턴 분석</p></div>
+    </div>
+  </div>
+  <div class="proj-gallery">
+    <figure><div class="shot" data-full="../assets/img/planner-today.jpg"><img src="../assets/img/planner-today.jpg" alt="오늘 화면"></div>
+      <figcaption><b>오늘</b>보낼 리마인드, 회신이 필요한 일, 빠진 계약 단계를 한 화면에</figcaption></figure>
+    <figure><div class="shot" data-full="../assets/img/planner-week.jpg"><img src="../assets/img/planner-week.jpg" alt="주간 화면"></div>
+      <figcaption><b>주간</b>기간 업무를 띠로 표시하고, 회신이 필요한 건을 따로 모아 보기</figcaption></figure>
+    <figure><div class="shot" data-full="../assets/img/planner-retro.jpg"><img src="../assets/img/planner-retro.jpg" alt="회고 화면"></div>
+      <figcaption><b>회고</b>기한이 지난 일에 미룬 이유와 새 날짜를 직접 기록</figcaption></figure>
+  </div>
+  <p class="note">※ 화면은 샘플 데이터이며, 고객사 이름은 가렸습니다.</p>
+</template>
+
+<dialog class="dlg" id="dlg" aria-label="상세 내용">
+  <div class="dlg-in">
+    <div class="dlg-bar"><button class="dlg-x" type="button" id="dlgX" aria-label="닫기">✕</button></div>
+    <div class="dlg-body" id="dlgBody"></div>
+  </div>
+</dialog>
+
+<dialog class="lb" id="lb" aria-label="이미지 크게 보기"><img alt=""></dialog>
 
 <script>
   // theme toggle (per-viewer convenience only)
@@ -717,14 +977,34 @@
       mode='m'; save('m'); root.classList.add('m'); label(); scrollTo(0,0); // PC → 모바일 배치
     });
   })();
-  // lightbox
+  // 상세 창(페이지 안 페이지) + 이미지 크게 보기
   (function(){
-    var lb=document.getElementById('lb'), img=lb.querySelector('img');
-    document.querySelectorAll('[data-full]').forEach(function(el){
-      el.addEventListener('click',function(){img.src=el.dataset.full;lb.classList.add('on');});
+    var dlg=document.getElementById('dlg'), body=document.getElementById('dlgBody'),
+        lb=document.getElementById('lb'), lbImg=lb.querySelector('img');
+    function tpl(id){return document.getElementById('t-'+id);}
+    function open(id){
+      var t=tpl(id); if(!t) return false;
+      body.innerHTML=''; body.appendChild(t.content.cloneNode(true));
+      if(!dlg.open) dlg.showModal();
+      body.scrollTop=0;
+      try{history.replaceState(null,'','#'+id);}catch(e){}
+      return true;
+    }
+    dlg.addEventListener('close',function(){
+      try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}
     });
-    lb.addEventListener('click',function(){lb.classList.remove('on');});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on');});
+    document.getElementById('dlgX').addEventListener('click',function(){dlg.close();});
+    dlg.addEventListener('click',function(e){if(e.target===dlg) dlg.close();});
+    lb.addEventListener('click',function(){lb.close();});
+    document.addEventListener('click',function(e){
+      var o=e.target.closest('[data-open]');
+      if(o){open(o.dataset.open);return;}
+      var full=e.target.closest('[data-full]');
+      if(full){lbImg.src=full.dataset.full;lb.showModal();return;}
+      var a=e.target.closest('a[href^="#"]');
+      if(a && tpl(a.getAttribute('href').slice(1))){e.preventDefault();open(a.getAttribute('href').slice(1));}
+    });
+    if(location.hash) open(location.hash.slice(1));
   })();
   // reveal on scroll
   (function(){
