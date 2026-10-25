@@ -4,28 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>강민석 | Portfolio</title>
-<meta name="description" content="고객의 현장에서 문제를 찾고 기술로 해결하는 B2B 영업, 강민석의 포트폴리오">
+<meta name="description" content="고객의 운영과 사업을 함께 이해하고 맞춤형 제안을 하는 B2B 영업, 강민석의 포트폴리오">
 <meta property="og:title" content="강민석 | Portfolio">
-<meta property="og:description" content="고객의 현장에서 문제를 찾고, 기술로 해결합니다.">
-<meta property="og:image" content="../assets/img/crawler-dir.jpg">
+<meta property="og:description" content="고객의 운영과 사업을 함께 이해하고, 맞춤형 제안을 합니다.">
+<meta property="og:image" content="../assets/img/profile.jpg">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
   :root{
     --bg:#ffffff; --bg-soft:#f6f7f9; --ink:#111418; --ink-2:#4a5160; --ink-3:#8a91a0;
-    --line:#e6e8ec; --accent:#2f5bea; --accent-soft:#eef2fe; --card:#ffffff;
+    --line:#e6e8ec; --accent:#2f5bea; --accent-soft:#eef2fe; --card:#ffffff; --warn:#e0484f;
     --shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px rgba(16,24,40,.06);
     --radius:16px; --max:1120px;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
       --bg:#0e1116; --bg-soft:#151a21; --ink:#eef1f5; --ink-2:#b4bccb; --ink-3:#7f889a;
-      --line:#252c36; --accent:#7c9cff; --accent-soft:#1b2440; --card:#141920;
+      --line:#252c36; --accent:#7c9cff; --accent-soft:#1b2440; --card:#141920; --warn:#ff7b81;
       --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
     }
   }
   :root[data-theme="dark"]{
     --bg:#0e1116; --bg-soft:#151a21; --ink:#eef1f5; --ink-2:#b4bccb; --ink-3:#7f889a;
-    --line:#252c36; --accent:#7c9cff; --accent-soft:#1b2440; --card:#141920;
+    --line:#252c36; --accent:#7c9cff; --accent-soft:#1b2440; --card:#141920; --warn:#ff7b81;
     --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -41,30 +41,28 @@
      backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
   .logo{font-weight:800;letter-spacing:-.02em;font-size:18px}
-  .logo span{color:var(--accent)}
   .nav ul{display:flex;gap:28px;list-style:none;font-size:14.5px;color:var(--ink-2)}
   .nav ul a:hover{color:var(--ink)}
-  .theme-btn{border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;
-     width:34px;height:34px;cursor:pointer;font-size:15px;margin-left:20px}
   .nav-right{display:flex;align-items:center}
   .view-btn{border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;
      height:34px;padding:0 14px;cursor:pointer;font-size:13px;font-weight:600;margin-left:20px;font-family:inherit;white-space:nowrap}
+  .theme-btn{border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;
+     width:34px;height:34px;cursor:pointer;font-size:15px;margin-left:8px}
   .view-btn:hover,.theme-btn:hover{color:var(--ink)}
-  .theme-btn{margin-left:8px !important}
-
 
   /* hero */
-  .hero{padding:96px 0 80px;background:
+  .hero{padding:88px 0 72px;background:
      radial-gradient(900px 400px at 85% -10%,var(--accent-soft),transparent 70%)}
-  .hero .wrap{display:grid;grid-template-columns:1fr 280px;gap:64px;align-items:center}
+  .hero .wrap{display:grid;grid-template-columns:1fr 260px;gap:64px;align-items:center}
+  .hero .wrap.kpi-wrap{display:block}
   .eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);
      padding:6px 12px;border-radius:999px;margin-bottom:22px}
   .hero-name{font-size:32px;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
   .hero-name span{font-size:20px;font-weight:600;color:var(--ink-3);margin-left:10px}
-  .hero h1{font-size:clamp(34px,5vw,54px);line-height:1.2;letter-spacing:-.03em;font-weight:800}
+  .hero h1{font-size:clamp(32px,4.6vw,50px);line-height:1.22;letter-spacing:-.03em;font-weight:800}
   .hero h1 em{font-style:normal;color:var(--accent)}
   .hero p.lead{margin-top:22px;font-size:18px;color:var(--ink-2);text-wrap:pretty}
-  .hero-meta{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+  .hero-meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
   .btn{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;padding:12px 20px;border-radius:12px;
      border:1px solid var(--line);background:var(--card);transition:.15s}
   .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
@@ -73,57 +71,82 @@
   .photo img{border-radius:24px;aspect-ratio:3/4;object-fit:cover;width:100%;box-shadow:var(--shadow);background:#fff}
   .photo::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--accent);border-radius:24px;z-index:-1;opacity:.35}
 
-  /* lenses */
-  .hero .wrap.lens-wrap{display:block}
-  .lenses{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
-  .lens{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
-  .lens b{display:block;font-size:13px;color:var(--accent);margin-bottom:6px;letter-spacing:.02em}
-  .lens h3{font-size:17px;margin-bottom:6px}
-  .lens p{font-size:14.5px;color:var(--ink-2)}
-
-
-  /* summary */
-  .sum{padding:88px 0;border-top:1px solid var(--line)}
-  .sum-head{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;margin-bottom:40px}
-  .sum-title{font-size:clamp(46px,6vw,72px);font-weight:900;letter-spacing:-.04em;color:var(--accent);line-height:1}
-  .sum-head p{color:var(--ink-2);margin-top:14px;max-width:520px}
-  .me{display:flex;flex-direction:column;gap:8px;font-size:14.5px}
-  .me div{display:flex;gap:14px}
-  .me b{width:52px;color:var(--ink-3);font-weight:600}
-  .sum-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px}
-  .card h3{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--accent);margin-bottom:6px}
-  .row{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
-  .row:last-child{border-bottom:0;padding-bottom:0}
-  .row .d{font-size:13.5px;color:var(--ink-3);padding-top:1px}
-  .row .t{font-size:15.5px;font-weight:600;line-height:1.45}
-  .row .t small{display:block;font-size:13.5px;font-weight:400;color:var(--ink-2);margin-top:3px}
-
-  /* skills */
-  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .sk h4{font-size:19px;margin-bottom:6px}
-  .sk p{font-size:15px;color:var(--ink-2);margin-bottom:22px}
-  .logos{display:flex;flex-wrap:wrap;gap:18px}
-  .logo-item{width:64px;text-align:center}
-  .logo-tile{width:64px;height:64px;border-radius:16px;background:#fff;border:1px solid #e6e8ec;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(16,24,40,.06)}
-  .logo-tile img{width:34px;height:34px}
-  .logo-tile.txt{font-size:18px;font-weight:800;letter-spacing:-.02em}
-  .logo-item span{display:block;font-size:12px;color:var(--ink-2);margin-top:8px;line-height:1.3}
-  @media (max-width:960px){ .sum-grid,.skills{grid-template-columns:1fr} }
-  @media (max-width:560px){ .row{grid-template-columns:96px 1fr;gap:12px} .card{padding:22px} }
+  /* kpi */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+  .kpi{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;transition:.15s}
+  .kpi:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .kpi b{display:block;font-size:30px;font-weight:800;letter-spacing:-.03em;color:var(--accent);line-height:1.15}
+  .kpi strong{display:block;font-size:15px;margin-top:8px;line-height:1.4}
+  .kpi span{display:block;font-size:13.5px;color:var(--ink-2);margin-top:2px;line-height:1.45}
 
   /* sections */
   section.block{padding:96px 0;border-top:1px solid var(--line)}
   section.block.soft{background:var(--bg-soft)}
-  .sec-head{margin-bottom:44px}
+  .sec-head{margin-bottom:40px}
   .sec-head .num{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.08em}
   .sec-head h2{font-size:clamp(26px,3.4vw,34px);letter-spacing:-.025em;margin-top:6px}
-  .sec-head p{color:var(--ink-2);margin-top:8px;max-width:640px}
-  .sec-head p.wide{max-width:none}
+  .sec-head p{color:var(--ink-2);margin-top:8px;max-width:680px}
+
+  /* fit */
+  .fit{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+  .fit-row{display:grid;grid-template-columns:230px 1fr 92px;gap:28px;padding:24px 30px;border-bottom:1px solid var(--line);align-items:start}
+  .fit-row:last-child{border-bottom:0}
+  .fit-row.head{padding:13px 30px;background:var(--bg-soft);font-size:12.5px;font-weight:700;color:var(--ink-3);letter-spacing:.04em}
+  .fit-task{font-size:16px;font-weight:700;line-height:1.45}
+  .fit-task small{display:block;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:3px;letter-spacing:.06em}
+  .fit ul,.group ul{list-style:none}
+  .fit li,.group li{position:relative;padding-left:14px;font-size:15px;color:var(--ink-2);margin:3px 0}
+  .fit li::before,.group li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--ink-3)}
+  .fit li b{color:var(--ink);font-weight:700}
+  .fit-link{font-size:13.5px;font-weight:600;color:var(--accent);white-space:nowrap;padding-top:1px;text-align:right}
+  .fit-link:hover{text-decoration:underline}
+
+  /* cases */
+  .case{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+  .case + .case{margin-top:24px}
+  .case-head{padding:34px 36px 0}
+  .case-head .meta{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.02em}
+  .case-head h3{font-size:clamp(22px,2.6vw,28px);letter-spacing:-.025em;margin-top:6px;line-height:1.3}
+  .case-body{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;padding:28px 36px 36px;align-items:start}
+  .steps{list-style:none;counter-reset:s}
+  .steps li{position:relative;padding:0 0 20px 44px}
+  .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;
+     background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .steps li::after{content:"";position:absolute;left:13.5px;top:34px;bottom:6px;width:1px;background:var(--line)}
+  .steps li:last-child{padding-bottom:0}
+  .steps li:last-child::after{display:none}
+  .steps b{display:block;font-size:14px;color:var(--ink);padding-top:3px;margin-bottom:2px}
+  .steps p{font-size:15px;color:var(--ink-2);text-wrap:pretty}
+  .viz{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px}
+  .viz-title{font-size:13px;font-weight:700;color:var(--ink-3);letter-spacing:.02em}
+  .opt{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .opt.pick{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  .opt h4{font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .opt h4 em{font-style:normal;font-size:12px;font-weight:700;color:var(--bg);background:var(--accent);padding:2px 9px;border-radius:999px;white-space:nowrap}
+  .opt p{font-size:13.5px;color:var(--ink-2);margin-top:4px}
+  .meter{display:flex;height:16px;border-radius:6px;overflow:hidden;border:1px solid var(--line);margin-top:12px;background:var(--bg)}
+  .meter .use{background:var(--accent)}
+  .meter .waste{flex:1;background:repeating-linear-gradient(45deg,var(--warn) 0 3px,transparent 3px 7px);opacity:.75}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--ink-3);margin-top:8px}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px;background:var(--accent)}
+  .legend i.w{background:repeating-linear-gradient(45deg,var(--warn) 0 2px,transparent 2px 4px)}
+  .viz-note{font-size:12px;color:var(--ink-3)}
+  .viz-result{border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .viz-result b{font-size:30px;font-weight:800;letter-spacing:-.03em;color:var(--accent);line-height:1.1}
+  .viz-result span{font-size:14px;color:var(--ink-2)}
+  .chips{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+  .chip{aspect-ratio:1;border-radius:10px;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+     font-size:12.5px;font-weight:700;color:var(--ink-3)}
+  .arrow{text-align:center;font-size:13px;font-weight:600;color:var(--ink-3)}
+  .pkgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .pkg{background:var(--card);border:1px solid var(--accent);border-radius:12px;padding:14px 16px;box-shadow:0 0 0 3px var(--accent-soft)}
+  .pkg h4{font-size:14.5px;line-height:1.35}
+  .pkg p{font-size:13px;color:var(--ink-2);margin-top:6px;line-height:1.5}
 
   /* experience */
   .xp{display:grid;grid-template-columns:240px 1fr;gap:40px;padding:36px 0;border-bottom:1px solid var(--line)}
-  .xp:last-child{border-bottom:0}
+  .xp:first-of-type{padding-top:0}
+  .xp:last-child{border-bottom:0;padding-bottom:0}
   .xp-side .co{font-size:21px;font-weight:800;letter-spacing:-.02em}
   .xp-side .role{color:var(--ink-2);font-size:14.5px;margin-top:4px}
   .xp-side .date{color:var(--ink-3);font-size:14px;margin-top:10px}
@@ -131,9 +154,7 @@
   .hl{background:var(--accent-soft);border-radius:12px;padding:14px 16px;font-size:14.5px;font-weight:600;color:var(--ink)}
   .groups{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 32px}
   .group h4{font-size:14px;color:var(--ink);margin-bottom:8px;font-weight:700}
-  .group ul{list-style:none}
-  .group li{position:relative;padding-left:14px;font-size:14.5px;color:var(--ink-2);margin:4px 0}
-  .group li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--ink-3)}
+  .group li{font-size:14.5px;margin:4px 0}
 
   /* project */
   .proj{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
@@ -144,10 +165,9 @@
   .proj-info h3{font-size:28px;letter-spacing:-.025em}
   .proj-info .sub{color:var(--ink-2);margin-top:6px}
   .proj-info dl{margin-top:26px}
-  .proj-info dd{margin-bottom:18px;text-wrap:pretty}
-  .proj-info dd:last-child{margin-bottom:0}
   .proj-info dt{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:4px}
-  .proj-info dd{font-size:15px;color:var(--ink-2)}
+  .proj-info dd{font-size:15px;color:var(--ink-2);margin-bottom:18px;text-wrap:pretty}
+  .proj-info dd:last-child{margin-bottom:0}
   .proj-hero{background:var(--bg-soft);padding:32px;display:flex;align-items:center;border-left:1px solid var(--line)}
   .shot{border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);cursor:zoom-in;background:#fff}
   .shot img{width:100%}
@@ -159,18 +179,17 @@
   .step span{font-size:12px;font-weight:700;color:var(--ink-3)}
   .step p{font-size:14px;font-weight:600;margin-top:4px;line-height:1.45}
 
-  /* cases */
-  .cases{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .case{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px;box-shadow:var(--shadow);display:flex;flex-direction:column}
-  .case .meta{font-size:13px;color:var(--ink-3)}
-  .case h3{font-size:22px;letter-spacing:-.02em;margin:6px 0 22px;line-height:1.35}
-  .case-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:26px}
-  .stat{background:var(--accent-soft);border-radius:14px;padding:16px 18px}
-  .stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--accent);line-height:1.2}
-  .stat span{display:block;font-size:13.5px;color:var(--ink-2);margin-top:4px}
-  .case dl{display:grid;grid-template-columns:44px 1fr;gap:12px 14px}
-  .case dt{font-size:13px;font-weight:700;color:var(--accent);padding-top:2px}
-  .case dd{font-size:15px;color:var(--ink-2);text-wrap:pretty}
+  /* skills */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px}
+  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .sk h4{font-size:19px;margin-bottom:6px}
+  .sk p{font-size:15px;color:var(--ink-2);margin-bottom:22px}
+  .logos{display:flex;flex-wrap:wrap;gap:18px}
+  .logo-item{width:64px;text-align:center}
+  .logo-tile{width:64px;height:64px;border-radius:16px;background:#fff;border:1px solid #e6e8ec;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(16,24,40,.06)}
+  .logo-tile img{width:34px;height:34px}
+  .logo-tile.txt{font-size:18px;font-weight:800;letter-spacing:-.02em}
+  .logo-item span{display:block;font-size:12px;color:var(--ink-2);margin-top:8px;line-height:1.3}
 
   /* reports */
   .reports{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -187,21 +206,17 @@
   .rep .actions a{flex:1;text-align:center;font-size:13.5px;font-weight:600;padding:9px 0;border-radius:10px;border:1px solid var(--line)}
   .rep .actions a.dl{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 
-  /* activity + edu */
-  .two{display:grid;grid-template-columns:1fr;gap:24px}
-  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
-  .panel h3{font-size:20px;letter-spacing:-.02em}
-  .panel .date{color:var(--ink-3);font-size:14px;margin-top:2px}
-  .panel .groups{grid-template-columns:1fr;margin-top:20px}
-  .kv{list-style:none;margin-top:16px}
-  .kv li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
-  .kv li:last-child{border-bottom:0}
-  .kv li span:last-child{color:var(--ink-3);white-space:nowrap}
-  .panel h4.sub{font-size:14px;color:var(--accent);margin-top:26px}
+  /* profile */
+  .profile{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card h3{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--accent);margin-bottom:6px}
+  .row{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:0;padding-bottom:0}
+  .row .d{font-size:13px;color:var(--ink-3);padding-top:1px}
+  .row .t{font-size:15px;font-weight:600;line-height:1.45}
+  .row .t small{display:block;font-size:13px;font-weight:400;color:var(--ink-2);margin-top:3px}
 
   /* contact */
   footer{padding:88px 0 56px;border-top:1px solid var(--line);text-align:center}
-  footer h2{font-size:clamp(26px,3.4vw,36px);letter-spacing:-.025em}
   footer p{color:var(--ink-2);font-size:17px;font-weight:600}
   footer .btn{margin-top:26px}
   footer small{display:block;margin-top:48px;color:var(--ink-3);font-size:13px}
@@ -217,62 +232,78 @@
 
   @media (max-width:960px){
     .hero .wrap{grid-template-columns:1fr;gap:40px}
-    .photo{max-width:240px;order:-1}
-    .lenses{grid-template-columns:1fr}
+    .photo{max-width:220px;order:-1}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .fit-row{grid-template-columns:1fr;gap:10px}
+    .fit-row.head{display:none}
+    .fit-link{text-align:left}
+    .case-body{grid-template-columns:1fr}
     .xp{grid-template-columns:1fr;gap:18px}
-    .cases{grid-template-columns:1fr}
     .proj-top{grid-template-columns:1fr}
     .proj-hero{border-left:0;border-top:1px solid var(--line)}
     .proj-gallery{grid-template-columns:1fr}
     .flow{grid-template-columns:repeat(2,1fr)}
+    .skills{grid-template-columns:1fr}
     .reports{grid-template-columns:repeat(2,1fr)}
-    .two{grid-template-columns:1fr}
+    .profile{grid-template-columns:1fr}
     .nav ul{display:none}
     .view-btn{margin-left:0}
   }
   @media (max-width:560px){
     .br-d{display:none}
     .wrap{padding:0 16px}
-    .hero{padding:56px 0 56px}
+    .hero{padding:52px 0 56px}
     section.block{padding:64px 0}
+    .kpi{padding:16px}
+    .kpi b{font-size:25px}
+    .fit-row{padding:20px 22px}
+    .case-head{padding:26px 22px 0}
+    .case-body{padding:22px 22px 26px;gap:26px}
+    .viz{padding:18px}
+    .pkgs{grid-template-columns:1fr}
     .highlights,.groups{grid-template-columns:1fr}
-    .case{padding:26px}
     .proj-info{padding:26px}
     .proj-gallery{padding:24px}
     .reports{grid-template-columns:1fr}
+    .row{grid-template-columns:96px 1fr;gap:12px}
+    .card{padding:22px}
   }
 
   /* 모바일로 보기 (PC에서 강제 모바일 레이아웃) */
   html.m{background:var(--bg-soft)}
   html.m body{max-width:430px;margin:0 auto;box-shadow:0 0 0 1px var(--line),0 20px 60px rgba(16,24,40,.12);min-height:100vh}
-  html.m .sum-grid,html.m .skills{grid-template-columns:1fr}
-  html.m .row{grid-template-columns:96px 1fr;gap:12px}
-  html.m .card{padding:22px}
   html.m .hero .wrap{grid-template-columns:1fr;gap:40px}
-  html.m .photo{max-width:240px;order:-1}
-  html.m .lenses{grid-template-columns:1fr}
+  html.m .photo{max-width:220px;order:-1}
+  html.m .kpis{grid-template-columns:repeat(2,1fr)}
+  html.m .kpi{padding:16px}
+  html.m .kpi b{font-size:25px}
+  html.m .fit-row{grid-template-columns:1fr;gap:10px;padding:20px 22px}
+  html.m .fit-row.head{display:none}
+  html.m .fit-link{text-align:left}
+  html.m .case-head{padding:26px 22px 0}
+  html.m .case-body{grid-template-columns:1fr;padding:22px 22px 26px;gap:26px}
+  html.m .viz{padding:18px}
+  html.m .pkgs{grid-template-columns:1fr}
   html.m .xp{grid-template-columns:1fr;gap:18px}
-  html.m .cases{grid-template-columns:1fr}
-  html.m .case{padding:26px}
+  html.m .highlights,html.m .groups{grid-template-columns:1fr}
   html.m .proj-top{grid-template-columns:1fr}
   html.m .proj-hero{border-left:0;border-top:1px solid var(--line)}
-  html.m .proj-gallery{grid-template-columns:1fr}
+  html.m .proj-info{padding:26px}
+  html.m .proj-gallery{grid-template-columns:1fr;padding:24px}
   html.m .flow{grid-template-columns:repeat(2,1fr)}
-  html.m .reports{grid-template-columns:repeat(2,1fr)}
-  html.m .two{grid-template-columns:1fr}
+  html.m .skills{grid-template-columns:1fr}
+  html.m .reports{grid-template-columns:1fr}
+  html.m .profile{grid-template-columns:1fr}
+  html.m .row{grid-template-columns:96px 1fr;gap:12px}
+  html.m .card{padding:22px}
   html.m .nav ul{display:none}
   html.m .view-btn{margin-left:0}
   html.m .br-d{display:none}
   html.m .wrap{padding:0 16px}
-  html.m .hero{padding:56px 0 56px}
+  html.m .hero{padding:52px 0 56px}
   html.m section.block{padding:64px 0}
-  html.m .highlights,html.m .groups{grid-template-columns:1fr}
-  html.m .proj-info{padding:26px}
-  html.m .proj-gallery{padding:24px}
-  html.m .reports{grid-template-columns:1fr}
-  html.m .hero h1{font-size:34px}
+  html.m .hero h1{font-size:32px}
   html.m .sec-head h2{font-size:26px}
-  html.m .sum-title{font-size:46px}
   html.m .hero-name{font-size:28px}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
@@ -284,13 +315,12 @@
     <a href="#top" class="logo">강민석의 포트폴리오</a>
     <div class="nav-right">
       <ul>
-        <li><a href="#summary">Summary</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
+        <li><a href="#fit">Fit</a></li>
         <li><a href="#cases">Cases</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#project">Project</a></li>
         <li><a href="#reports">Reports</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <li><a href="#profile">Profile</a></li>
       </ul>
       <button class="view-btn" id="viewBtn" type="button">모바일로 보기</button>
       <button class="theme-btn" id="themeBtn" aria-label="테마 전환">◐</button>
@@ -303,84 +333,151 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <span class="eyebrow">B2B Sales · AICC · Contact Center</span>
+        <span class="eyebrow">B2B Sales · kt is 영업 직무</span>
         <div class="hero-name">강민석 <span>Minseok Kang</span></div>
-        <h1>고객의 현장에서<br><em>문제를 찾고</em><br>기술로 해결합니다</h1>
-        <p class="lead">제조 AI 기업과 클라우드 기업에서 B2B 영업을 했습니다.<br class="br-d"> 고객의 업무 현황을 먼저 확인하고,<br> 그 안에서 필요한 해결책을 찾아 제안합니다.</p>
+        <h1>고객의 운영과 사업을<br>함께 이해하고<br><em>맞춤형 제안</em>을 합니다</h1>
+        <p class="lead">게임사 대상 AWS 영업과 제조 AI B2B 세일즈를 했습니다.<br class="br-d"> 고객사의 사용 현황과 사업을 먼저 살피고, 그에 맞춰 제안을 구성합니다.</p>
+        <div class="hero-meta">
+          <a class="btn primary" href="#cases">제안 사례 보기</a>
+          <a class="btn" href="mailto:kms2086@gmail.com">✉ kms2086@gmail.com</a>
+        </div>
       </div>
       <div class="photo"><img src="../assets/img/profile.jpg" alt="강민석 프로필 사진"></div>
     </div>
-    <div class="wrap lens-wrap">
-      <div class="lenses">
-        <div class="lens reveal"><b>DISCOVER</b><h3>누구를 먼저 만날까</h3><p>게임사 120여 곳을 리스트업해 직접 연락하고, 뉴스와 공시 데이터로 수요 신호가 있는 고객을 골라냈습니다.</p></div>
-        <div class="lens reveal"><b>DIAGNOSE</b><h3>무엇이 필요한가</h3><p>20건 이상의 문의를 응대하고 30회 이상의 미팅에 동행하며, 도입 목적과 설비, 데이터 유무부터 확인했습니다.</p></div>
-        <div class="lens reveal"><b>PROPOSE</b><h3>어떻게 제안할까</h3><p>고객의 상황에 맞춰 솔루션을 다시 묶고, 비용 시뮬레이션과 함께 제안해 결과로 연결했습니다.</p></div>
+    <div class="wrap kpi-wrap">
+      <div class="kpis">
+        <a class="kpi reveal" href="#case-a"><b>약 10%</b><strong>고객 비용 절감</strong><span>과금 분석 기반 할인 프로그램 제안</span></a>
+        <a class="kpi reveal" href="#case-b"><b>Top 10</b><strong>153개 기업 중 공모전 선정</strong><span>6개 솔루션을 2개 패키지로 재구성</span></a>
+        <a class="kpi reveal" href="#experience"><b>6건</b><strong>신규·갱신 계약 클로징</strong><span>업셀 4건 · 약 2,400만 원</span></a>
+        <a class="kpi reveal" href="#experience"><b>160개</b><strong>게임사 어카운트 관리</strong><span>활성 과금고객 60개 직접 담당</span></a>
       </div>
     </div>
   </section>
 
-  <!-- SUMMARY -->
-  <section class="sum" id="summary">
+  <!-- FIT -->
+  <section class="block soft" id="fit">
     <div class="wrap">
-      <div class="sum-head reveal">
-        <div>
-          <div class="sum-title">SUMMARY</div>
+      <div class="sec-head reveal"><div class="num">01 — FIT</div><h2>kt is 영업 업무와 제 경험</h2>
+        <p>공고의 영업 수행업무를 기준으로, 제가 직접 해 본 비슷한 일을 정리했습니다.</p></div>
+      <div class="fit reveal">
+        <div class="fit-row head"><div>공고 수행업무</div><div>제가 해 본 일</div><div style="text-align:right">자세히</div></div>
+        <div class="fit-row">
+          <div class="fit-task"><small>DISCOVER</small>신규·가망 고객 발굴 및 리서치</div>
+          <ul>
+            <li>게임사 <b>120여 곳</b> 리스트업 및 아웃바운드 컨택, SFDC로 후속 관리</li>
+            <li>뉴스·공시 데이터로 게임사 <b>465곳</b>을 점수화하는 리드 발굴 도구 제작</li>
+            <li>파트너 사업설명회 섭외 콜드콜 50건 이상, 참여 기업 <b>11개사</b> 확정</li>
+          </ul>
+          <a class="fit-link" href="#project">프로젝트 →</a>
         </div>
-        <div class="me">
-          <div><b>이름</b><span>강민석 (Minseok Kang)</span></div>
-          <div><b>이메일</b><span>kms2086@gmail.com</span></div>
+        <div class="fit-row">
+          <div class="fit-task"><small>CONSULT</small>신규 영업대상·기존고객 관리 및 컨설팅</div>
+          <ul>
+            <li>게임사 어카운트 <b>160개</b>의 과금 내역과 운영·개발 중인 게임을 함께 분석</li>
+            <li>출시를 앞둔 고객사에 할인 프로그램을 제안해 비용 <b>약 10%</b> 절감</li>
+            <li>고객·파트너 미팅 30건 이상 동행, 요구사항 정리 및 회의록 작성</li>
+          </ul>
+          <a class="fit-link" href="#case-a">사례 A →</a>
         </div>
-      </div>
-      <div class="sum-grid">
-        <div class="card reveal">
-          <h3>EXPERIENCE · 경력</h3>
-          <div class="row"><div class="d">2026.03 – 2026.07</div><div class="t">메가존클라우드 · 세일즈 매니저<small>Game 2 · 게임사 대상 AWS B2B 세일즈</small></div></div>
-          <div class="row"><div class="d">2025.07 – 2025.12</div><div class="t">인터엑스 · 인턴<small>AM사업개발팀 · 제조 AI B2B 세일즈</small></div></div>
+        <div class="fit-row">
+          <div class="fit-task"><small>PROPOSE</small>입찰 제안서 작성 및 PT</div>
+          <ul>
+            <li>중소벤처기업부 제조 AI 솔루션 공모전 신청서 작성, 153개 기업 중 <b>최종 10개</b> 선정</li>
+            <li>정부지원사업·민간 제안서 <b>10건 이상</b> 작성 지원</li>
+            <li>사내 클라우드·AI 개론 발표 (약 20명 대상)</li>
+          </ul>
+          <a class="fit-link" href="#case-b">사례 B →</a>
         </div>
-        <div class="card reveal">
-          <h3>EDUCATION · 학력</h3>
-          <div class="row"><div class="d">2019.03 – 2025.08</div><div class="t">강남대학교 경제금융전공<small>졸업 · 학점 3.57 / 4.5</small></div></div>
-          <div class="row"><div class="d">2015.03 – 2018.02</div><div class="t">상문고등학교<small>인문계열 졸업</small></div></div>
+        <div class="fit-row">
+          <div class="fit-task"><small>CLOSE</small>신규 수주·재계약 체결</div>
+          <ul>
+            <li>신규·갱신 계약 <b>6건</b> 클로징 (업셀 4건, 약 2,400만 원)</li>
+            <li>제안부터 날인·정산까지 계약 전 과정 수행</li>
+          </ul>
+          <a class="fit-link" href="#experience">경력 →</a>
         </div>
-        <div class="card reveal">
-          <h3>ACTIVITY · 활동</h3>
-          <div class="row"><div class="d">2024.09 – 2025.12</div><div class="t">대학생연합가치투자동아리 SURI<small>가치투자 기반 기업·산업 분석 · 90~100명 규모 동아리 운영진</small></div></div>
-          <div class="row"><div class="d">2025.03 – 2025.06</div><div class="t">SENSE 시사토론 스터디<small>시황 점검·주요 이슈 분석 및 토론 (주 4회, 기사 5건 스크랩)</small></div></div>
-          <div class="row"><div class="d">2020.03 – 2022.05</div><div class="t">강남대학교 타키온즈<small>야구동아리 회장 · 사회인 야구 리그 참여 및 정기 연습 주도</small></div></div>
-        </div>
-        <div class="card reveal">
-          <h3>CERTIFICATE · 자격 · 어학</h3>
-          <div class="row"><div class="d">2026.04</div><div class="t">AWS Certified AI Practitioner</div></div>
-          <div class="row"><div class="d">2026.04</div><div class="t">AWS Certified Cloud Practitioner</div></div>
-          <div class="row"><div class="d">2024.12</div><div class="t">OPIc IH</div></div>
-          <div class="row"><div class="d">2024.06</div><div class="t">투자자산운용사</div></div>
-          <div class="row"><div class="d">2019.06</div><div class="t">운전면허 2종 보통</div></div>
+        <div class="fit-row">
+          <div class="fit-task"><small>AI</small>AI 기술 활용 (공고 우대사항)</div>
+          <ul>
+            <li>스마트팩토리 수준 자가진단 챗봇 제작, 실제 고객사 배포</li>
+            <li>AI를 활용한 학습용 웹앱을 직접 만들어 AWS 자격증 <b>2종</b> 취득</li>
+            <li>클로드 코드(CLI)를 활용해 리드 발굴 도구 구현</li>
+          </ul>
+          <a class="fit-link" href="#skills">도구 →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section class="block soft" id="skills">
+  <!-- CASES -->
+  <section class="block" id="cases">
     <div class="wrap">
-      <div class="sec-head reveal"><div class="num">01 — SKILLS</div><h2>사용할 수 있는 도구</h2></div>
-      <div class="skills">
-        <div class="card sk reveal"><h4>생성형 AI</h4><p>CLI·앱 기반 바이브 코딩 및 세일즈 데이터 분석</p>
-          <div class="logos"><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/claude.svg" alt="Claude"></div><span>Claude</span></div><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/openai.svg" alt="ChatGPT"></div><span>ChatGPT</span></div></div></div>
-        <div class="card sk reveal"><h4>CRM &amp; ERP</h4><p>고객·리드 관리 및 영업활동·업무 데이터 관리</p>
-          <div class="logos"><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/salesforce.svg" alt="Salesforce"></div><span>Salesforce</span></div><div class="logo-item"><div class="logo-tile txt" style="color:#0f4c81">SP</div><span>Salespoint</span></div><div class="logo-item"><div class="logo-tile txt" style="color:#1d6fd8">AM</div><span>Amaranth</span></div></div></div>
-        <div class="card sk reveal"><h4>협업 &amp; 생산성</h4><p>업무 일정, 프로젝트 관리 등 커뮤니케이션</p>
-          <div class="logos"><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/slack.svg" alt="Slack"></div><span>Slack</span></div><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/notion.svg" alt="Notion"></div><span>Notion</span></div><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/obsidian.svg" alt="Obsidian"></div><span>Obsidian</span></div></div></div>
-        <div class="card sk reveal"><h4>OA</h4><p>제안서, 발표자료 등 실무 문서 작성</p>
-          <div class="logos"><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/excel.svg" alt="Excel"></div><span>Excel</span></div><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/word.svg" alt="Word"></div><span>Word</span></div><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/powerpoint.svg" alt="PowerPoint"></div><span>PowerPoint</span></div><div class="logo-item"><div class="logo-tile txt" style="color:#1a73e8">한</div><span>한글</span></div><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/google.svg" alt="Google Workspace"></div><span>Google Workspace</span></div></div></div>
-      </div>
+      <div class="sec-head reveal"><div class="num">02 — CASES</div><h2>제안 사례</h2>
+        <p>고객과 조건을 먼저 이해하고, 그에 맞춰 제안을 구성한 두 가지 사례입니다.</p></div>
+
+      <article class="case reveal" id="case-a">
+        <div class="case-head">
+          <div class="meta">CASE A · 메가존클라우드 · 2026 · 게임사 대상 AWS 영업</div>
+          <h3>고객 맞춤형 영업으로 만든 10% 비용 절감</h3>
+        </div>
+        <div class="case-body">
+          <ol class="steps">
+            <li><b>고객 이해</b><p>담당한 160개 고객사의 과금 내역에서 사용 서비스와 비용 구조를 확인했습니다. 비용이 왜 그렇게 나오는지 알기 위해 운영 중이거나 개발 중인 게임을 확인하고 장르별 서버 구조를 공부했습니다.</p></li>
+            <li><b>상황 파악</b><p>한 고객사는 3~4개월 뒤 출시할 로그라이크 모바일 게임을 개발하고 있었고, 비용 대부분이 컴퓨팅 자원에 집중되어 있었습니다. 출시 후 사용량은 예측하기 어려웠습니다.</p></li>
+            <li><b>제안</b><p>사용량을 약정하면 실제 사용량이 약정보다 적을 때 쓰지 않는 비용까지 부담해야 했습니다. 그래서 사용량 약정 없이 기간만 약정하는 할인 프로그램을 제안했습니다.</p></li>
+            <li><b>결과</b><p>계약을 체결했고, 고객은 서비스 변경 없이 약 10%의 비용을 절감할 수 있었습니다.</p></li>
+          </ol>
+          <div class="viz" aria-label="사용량 약정과 기간 약정 비교">
+            <div class="viz-title">출시 전이라 사용량을 예측하기 어려운 고객</div>
+            <div class="opt">
+              <h4>사용량 약정</h4>
+              <p>실제 사용량이 약정보다 적으면, 쓰지 않는 비용까지 부담</p>
+              <div class="meter"><span class="use" style="width:58%"></span><span class="waste"></span></div>
+              <div class="legend"><span><i></i>실제 사용량</span><span><i class="w"></i>쓰지 않는 약정분</span></div>
+            </div>
+            <div class="opt pick">
+              <h4>기간만 약정 <em>제안</em></h4>
+              <p>사용량이 달라져도 부담 없이 할인 적용</p>
+              <div class="meter"><span class="use" style="width:58%"></span></div>
+              <div class="legend"><span><i></i>실제 사용량</span></div>
+            </div>
+            <div class="viz-note">※ 이해를 돕기 위한 개념도입니다.</div>
+            <div class="viz-result"><b>약 10%</b><span>서비스 변경 없이 비용 절감 · 계약 체결</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case reveal" id="case-b">
+        <div class="case-head">
+          <div class="meta">CASE B · 인터엑스 · 2025 · 중소벤처기업부 제조 AI 솔루션 공모전</div>
+          <h3>Top 10 선정으로 증명한 전략적 패키징의 힘</h3>
+        </div>
+        <div class="case-body">
+          <ol class="steps">
+            <li><b>상황</b><p>구성원들이 본업으로 바빠 준비를 맡기 어려운 상황이었습니다. 처음 해 보는 일이었지만 제가 맡겠다고 말씀드렸고, 발표를 제외한 제출 준비 전 과정을 담당했습니다.</p></li>
+            <li><b>문제</b><p>기업당 솔루션은 2개까지만 제출할 수 있었습니다. 6개 솔루션 중 2개만 고르면, 여러 솔루션을 통합해 제공할 수 있다는 회사의 강점을 충분히 보여주기 어려웠습니다.</p></li>
+            <li><b>실행</b><p>AI 인력과 인프라가 부족한 중소 제조기업이 연관된 기능을 한 번에 도입할 수 있도록 6개 솔루션을 2개 패키지로 묶었습니다. 담당 팀에 적용 사례와 성과 자료를 항목별로 요청하고, 고객의 문제·해결 방안·기대 효과 순으로 신청서를 작성했습니다. 진행 상황은 노션에 정리해 선임에게 수시로 보고했습니다.</p></li>
+            <li><b>결과</b><p>참가 기업 153개 중 최종 10개 기업에 선정되었고, 2026년 중소벤처기업부 사업 가점과 클라우드 크레딧을 받았으며 솔루션 자료집에도 수록되었습니다.</p></li>
+          </ol>
+          <div class="viz" aria-label="6개 솔루션을 2개 패키지로 재구성">
+            <div class="viz-title">기업당 2개 제출 제한</div>
+            <div class="chips"><div class="chip">AI 1</div><div class="chip">AI 2</div><div class="chip">AI 3</div><div class="chip">AI 4</div><div class="chip">AI 5</div><div class="chip">AI 6</div></div>
+            <div class="arrow">↓ 연관된 기능끼리 묶어 공모전 분류에 맞춤</div>
+            <div class="pkgs">
+              <div class="pkg"><h4>공정/자동화 AI</h4><p>장비 한 대에서 시작해 라인 전체로 넓혀 갈 수 있게 구성</p></div>
+              <div class="pkg"><h4>비즈니스/생성 AI</h4><p>별도의 AI 인력이나 클라우드 없이 사내 서버에서 운영</p></div>
+            </div>
+            <div class="viz-result"><b>153 → 10</b><span>참가 기업 중 최종 선정</span></div>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section class="block" id="experience">
+  <section class="block soft" id="experience">
     <div class="wrap">
-      <div class="sec-head reveal"><div class="num">02 — EXPERIENCE</div><h2>경력</h2></div>
+      <div class="sec-head reveal"><div class="num">03 — EXPERIENCE</div><h2>경력</h2></div>
 
       <article class="xp reveal">
         <div class="xp-side">
@@ -423,14 +520,14 @@
         </div>
         <div>
           <div class="highlights">
-            <div class="hl">제조AI 솔루션 공모전 운영 실무 총괄</div>
+            <div class="hl">제조AI 솔루션 공모전 참가 실무 총괄</div>
             <div class="hl">고객·파트너 미팅 30건+ 동행 · 사업 연계 5건</div>
             <div class="hl">콜드콜 50건+ → 사업설명회 참여 11개사 확보</div>
             <div class="hl">인바운드 20건+ → 세일즈 기회 3건 전환</div>
           </div>
           <div class="groups">
             <div class="group"><h4>세일즈 캠페인 지원</h4><ul>
-              <li>1차 100개 기업 → 2차 20개 기업 → 최종심사까지 공모전 전 과정 운영</li>
+              <li>참가 기업 153개 중 최종 10개 선정까지 공모전 준비 전 과정 담당 (발표 제외)</li>
               <li>평가 기준 정리, 자료 취합·검토, 담당자 커뮤니케이션, 일정 관리</li></ul></div>
             <div class="group"><h4>시장 조사 및 기회 발굴</h4><ul>
               <li>미팅 요구사항·Pain Point 정리 및 회의록 작성, 내부 공유</li>
@@ -449,49 +546,11 @@
     </div>
   </section>
 
-  <!-- CASES -->
-  <section class="block soft" id="cases">
-    <div class="wrap">
-      <div class="sec-head reveal"><div class="num">03 — CASES</div><h2>제안 사례</h2>
-        <p class="wide">고객의 상황을 먼저 확인하고, 그에 맞춰 제안을 다시 설계한 두 가지 사례입니다.</p></div>
-      <div class="cases">
-        <article class="case reveal">
-          <div class="meta">인터엑스 · 2025 · 중소벤처기업부 제조 AI 솔루션 공모전</div>
-          <h3>여섯 개 솔루션을<br>고객이 원하는 두 개의 패키지로</h3>
-          <div class="case-stats">
-            <div class="stat"><b>6 → 2</b><span>솔루션을 패키지로 재구성</span></div>
-            <div class="stat"><b>153 → 10</b><span>참가 기업 중 최종 선정</span></div>
-          </div>
-          <dl>
-            <dt>상황</dt><dd>기업당 솔루션은 2개까지만 제출할 수 있었고, 회사는 6개 솔루션을 각각 영업하고 있었습니다. 구성원들이 본업으로 바빠, 발표를 제외한 제출 준비 전 과정을 제가 맡았습니다.</dd>
-            <dt>판단</dt><dd>AI 인력과 인프라가 부족한 중소 제조기업의 상황을 고려해, 연관된 기능을 한 번에 도입할 수 있도록 6개 솔루션을 2개 패키지로 묶자고 제안했습니다.</dd>
-            <dt>실행</dt><dd>공모전 분야 구분에 맞춰 생성·문서 AI와 설비·공정 AI로 나누고, 담당 팀에 적용 사례와 성과 자료를 항목별로 요청해 고객의 문제, 해결 방안, 기대 효과 순으로 신청서를 작성했습니다.</dd>
-            <dt>결과</dt><dd>참가 기업 153개 중 최종 10개 기업에 선정되었고, 2026년 중소벤처기업부 사업 가점과 클라우드 크레딧을 받았으며 솔루션 자료집에도 수록되었습니다.</dd>
-          </dl>
-        </article>
-        <article class="case reveal">
-          <div class="meta">메가존클라우드 · 2026 · 중소 게임사 고객</div>
-          <h3>과금 내역에서 찾은<br>비용 절감 제안</h3>
-          <div class="case-stats">
-            <div class="stat"><b>약 10%</b><span>서비스 변경 없이 비용 절감</span></div>
-            <div class="stat"><b>2종</b><span>AWS 자격증 취득 (CCP · AIF)</span></div>
-          </div>
-          <dl>
-            <dt>상황</dt><dd>낯선 클라우드를 이해하기 위해 AWS 자격증 2개를 취득하며 서비스를 익혔고, 고객사의 과금 내역을 분석하던 중 한 중소 게임사의 비용이 컴퓨팅 자원에 집중된 것을 발견했습니다.</dd>
-            <dt>판단</dt><dd>컴퓨팅 사용량 변동이 큰 게임사의 특성을 고려해, 사용량 약정 없이 기간만 약정하는 할인 프로그램이 적합하다고 판단했습니다.</dd>
-            <dt>실행</dt><dd>비용 시뮬레이션 결과를 함께 정리해 할인 프로그램을 제안했습니다.</dd>
-            <dt>결과</dt><dd>고객은 서비스 변경 없이 약 10%의 비용을 절감할 수 있었습니다.</dd>
-          </dl>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <!-- PROJECT -->
   <section class="block" id="project">
     <div class="wrap">
       <div class="sec-head reveal"><div class="num">04 — PROJECT</div><h2>잠재 고객 리서치 대시보드</h2>
-        <p class="wide">흩어진 기업 소식과 공시 데이터를 한곳에 모아,<br class="br-d"> 어떤 고객을 언제 만날지 정하는 도구를 직접 기획하고 만들었습니다.</p></div>
+        <p>흩어진 기업 소식과 공시 데이터를 한곳에 모아,<br class="br-d"> 어떤 고객을 언제 만날지 정하는 도구를 직접 기획하고 만들었습니다.</p></div>
 
       <div class="proj reveal">
         <div class="proj-top">
@@ -527,11 +586,28 @@
     </div>
   </section>
 
-  <!-- REPORTS -->
-  <section class="block soft" id="reports">
+  <!-- SKILLS -->
+  <section class="block soft" id="skills">
     <div class="wrap">
-      <div class="sec-head reveal"><div class="num">05 — REPORTS</div><h2>기업·산업 분석 리포트</h2>
-        <p class="wide">대학생연합가치투자동아리 SURI에서 사업보고서와 재무제표를 바탕으로 직접 작성한 리포트입니다.<br class="br-d"> 표지를 누르면 크게 볼 수 있고, PDF로 내려받을 수 있습니다.</p></div>
+      <div class="sec-head reveal"><div class="num">05 — SKILLS</div><h2>사용할 수 있는 도구</h2></div>
+      <div class="skills">
+        <div class="card sk reveal"><h4>생성형 AI</h4><p>CLI·앱 기반 바이브 코딩 및 세일즈 데이터 분석</p>
+          <div class="logos"><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/claude.svg" alt="Claude"></div><span>Claude</span></div><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/openai.svg" alt="ChatGPT"></div><span>ChatGPT</span></div></div></div>
+        <div class="card sk reveal"><h4>CRM &amp; ERP</h4><p>고객·리드 관리 및 영업활동·업무 데이터 관리</p>
+          <div class="logos"><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/salesforce.svg" alt="Salesforce"></div><span>Salesforce</span></div><div class="logo-item"><div class="logo-tile txt" style="color:#0f4c81">SP</div><span>Salespoint</span></div><div class="logo-item"><div class="logo-tile txt" style="color:#1d6fd8">AM</div><span>Amaranth</span></div></div></div>
+        <div class="card sk reveal"><h4>협업 &amp; 생산성</h4><p>업무 일정, 프로젝트 관리 등 커뮤니케이션</p>
+          <div class="logos"><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/slack.svg" alt="Slack"></div><span>Slack</span></div><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/notion.svg" alt="Notion"></div><span>Notion</span></div><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/obsidian.svg" alt="Obsidian"></div><span>Obsidian</span></div></div></div>
+        <div class="card sk reveal"><h4>OA</h4><p>제안서, 발표자료 등 실무 문서 작성</p>
+          <div class="logos"><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/excel.svg" alt="Excel"></div><span>Excel</span></div><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/word.svg" alt="Word"></div><span>Word</span></div><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/powerpoint.svg" alt="PowerPoint"></div><span>PowerPoint</span></div><div class="logo-item"><div class="logo-tile txt" style="color:#1a73e8">한</div><span>한글</span></div><div class="logo-item"><div class="logo-tile"><img src="../assets/icons/google.svg" alt="Google Workspace"></div><span>Google Workspace</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTS -->
+  <section class="block" id="reports">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="num">06 — REPORTS</div><h2>기업·산업 분석 리포트</h2>
+        <p>대학생연합가치투자동아리 SURI에서 사업보고서와 재무제표를 바탕으로 직접 작성한 리포트입니다.<br class="br-d"> 표지를 누르면 크게 볼 수 있고, PDF로 내려받을 수 있습니다.</p></div>
       <div class="reports">
         <article class="rep reveal">
           <div class="cover" data-full="../assets/img/cover-game-industry.jpg"><img src="../assets/img/cover-game-industry.jpg" alt="게임 산업 리포트"></div>
@@ -561,26 +637,29 @@
     </div>
   </section>
 
-  <!-- ACTIVITY + EDU -->
-  <section class="block" id="activity">
+  <!-- PROFILE -->
+  <section class="block soft" id="profile">
     <div class="wrap">
-      <div class="sec-head reveal"><div class="num">06 — ACTIVITY</div><h2>활동 상세</h2></div>
-      <div class="two">
-        <div class="panel reveal">
-          <h3>대학생연합가치투자동아리 SURI</h3>
-          <div class="date">2024.09 – 2025.12 · 90~100명 규모</div>
-          <div class="groups">
-            <div class="group"><h4>기업·산업 분석</h4><ul>
-              <li>게임 섹터를 선택해 게임 산업 및 시프트업 분석 리포트 작성·발표</li>
-              <li>단일 IP 의존 구조, 신작 공백기 실적 영향, 두 번째 IP의 역할 분석</li>
-              <li>금융·소비재·여행·해외 기술주 등 다양한 산업 리포트 작성 (DART 사업보고서·재무제표 기반)</li></ul></div>
-            <div class="group"><h4>실전 투자 (SURI FUND)</h4><ul>
-              <li>2주 1회 직접 분석한 기업을 발표하고 실제 매수 여부를 놓고 토론·설득</li></ul></div>
-            <div class="group"><h4>운영진 (2025년 2학기)</h4><ul>
-              <li>학회장: 학기마다 개설되는 신입 교육 학회 4개 중 1개 운영</li>
-              <li>신입회원 기업분석 역량 육성 (신입 50명 중 MVP 배출)</li>
-              <li>전략부장: MT·LT·일일호프 등 동아리 행사 기획·총괄</li></ul></div>
-          </div>
+      <div class="sec-head reveal"><div class="num">07 — PROFILE</div><h2>학력 · 활동 · 자격</h2></div>
+      <div class="profile">
+        <div class="card reveal">
+          <h3>EDUCATION · 학력</h3>
+          <div class="row"><div class="d">2019.03 – 2025.08</div><div class="t">강남대학교 경제금융전공<small>졸업 · 학점 3.57 / 4.5</small></div></div>
+          <div class="row"><div class="d">2015.03 – 2018.02</div><div class="t">상문고등학교<small>인문계열 졸업</small></div></div>
+        </div>
+        <div class="card reveal">
+          <h3>ACTIVITY · 활동</h3>
+          <div class="row"><div class="d">2024.09 – 2025.12</div><div class="t">대학생연합가치투자동아리 SURI<small>가치투자 기반 기업·산업 분석 · 90~100명 규모 동아리 운영진</small></div></div>
+          <div class="row"><div class="d">2025.03 – 2025.06</div><div class="t">SENSE 시사토론 스터디<small>시황 점검·주요 이슈 분석 및 토론 (주 4회, 기사 5건 스크랩)</small></div></div>
+          <div class="row"><div class="d">2020.03 – 2022.05</div><div class="t">강남대학교 타키온즈<small>야구동아리 회장 · 사회인 야구 리그 참여 및 정기 연습 주도</small></div></div>
+        </div>
+        <div class="card reveal">
+          <h3>CERTIFICATE · 자격 · 어학</h3>
+          <div class="row"><div class="d">2026.04</div><div class="t">AWS Certified AI Practitioner</div></div>
+          <div class="row"><div class="d">2026.04</div><div class="t">AWS Certified Cloud Practitioner</div></div>
+          <div class="row"><div class="d">2024.12</div><div class="t">OPIc IH</div></div>
+          <div class="row"><div class="d">2024.06</div><div class="t">투자자산운용사</div></div>
+          <div class="row"><div class="d">2019.06</div><div class="t">운전면허 2종 보통</div></div>
         </div>
       </div>
     </div>
